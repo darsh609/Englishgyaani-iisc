@@ -35,10 +35,10 @@ const [audios, setAudios] = useState([]);
 
 //SETTING THE INPUTS IN THE ARRAY
 const handle=(event)=>{
-  console.log("handle--1",filters);
+  console.log("TTTThandle--1",filters);
   let inputs={[event.target.name]:event.target.value}
   setData({...filters,...inputs})
-  console.log("handle",filters);
+  console.log("TTTTTThandle",filters);
 
 
 }
@@ -65,47 +65,47 @@ const handle=(event)=>{
 // const db = getFirestore();
 
 
-const auth = getAuth();
-const audioRef = collection(database,'users');
-// Fetch audio data on component mount and filter based on selected criteria
-useEffect(() => {
+// const auth = getAuth();
+// const audioRef = collection(database,'users');
+// // Fetch audio data on component mount and filter based on selected criteria
+// useEffect(() => {
  
-  console.log("test-1",filters.statet,"..",filters.gendert,"...",filters.moth,"........",audioRef);
+//   console.log("test-1",filters.statet,"..",filters.gendert,"...",filters.moth,"........",audioRef);
 
 
- const q=query(audioRef,where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth));
-//  let audioQuery = query(audioRef);
+//  const q=query(audioRef,where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth));
+// //  let audioQuery = query(audioRef);
 
-  // if (filters.statet) {
-  //   audioQuery = query(audioQuery, where('origin', '==', filters.statet));
-  // }
-  // if (filters.gendert) {
-  //   audioQuery = query(audioQuery, where('gender', '==', filters.gendert));
-  // }
-  // if (filters.moth) {
-  //   audioQuery = query(audioQuery, where('mt', '==', filters.moth));
-  // }
+//   // if (filters.statet) {
+//   //   audioQuery = query(audioQuery, where('origin', '==', filters.statet));
+//   // }
+//   // if (filters.gendert) {
+//   //   audioQuery = query(audioQuery, where('gender', '==', filters.gendert));
+//   // }
+//   // if (filters.moth) {
+//   //   audioQuery = query(audioQuery, where('mt', '==', filters.moth));
+//   // }
 
-  // console.log("audio query",audioQuery);
-console.log("test-2",q)
-const unsub=onSnapshot(q,(snapshot) => {
-    const fetchedAudios = [];
+//   // console.log("audio query",audioQuery);
+// console.log("test-2",q)
+// const unsub=onSnapshot(q,(snapshot) => {
+//     const fetchedAudios = [];
     
-    snapshot.forEach((doc) => {
-      console.log("snapshot...=>",doc.data())
-      fetchedAudios.push(doc);
-    });
-    console.log("fetchesaudios ......=>",fetchedAudios);
-    setAudios(fetchedAudios);
+//     snapshot.forEach((doc) => {
+//       console.log("snapshot...=>",doc.data())
+//       fetchedAudios.push(doc);
+//     });
+//     console.log("fetchesaudios ......=>",fetchedAudios);
+//     setAudios(fetchedAudios);
 
-  //  setAudios(fetchedAudios.filter((audio) => audio.text?.includes(searchText) || !searchText));
+//   //  setAudios(fetchedAudios.filter((audio) => audio.text?.includes(searchText) || !searchText));
 
-   });
-   return()=>{
-    // console.log("fetchesaudios ......=>",fetchedAudios);
-    unsub();
-  }
-}, [filters]);
+//    });
+//    return()=>{
+//     // console.log("fetchesaudios ......=>",fetchedAudios);
+//     unsub();
+//   }
+// }, [filters]);
 
 
 
@@ -119,6 +119,52 @@ const unsub=onSnapshot(q,(snapshot) => {
 //   console.log("in useEFFect")
 //   listall().then((docs)=>console.log(docs.data));
 // },[]);
+
+
+
+
+
+
+
+
+
+useEffect(()=>{
+  const getdata=async()=>{
+    const db=getFirestore()
+    const q=query(collection(db,'users'))
+    console.log("Query....." , q)
+    const snapshot=await getDocs(q)
+    const data=snapshot.docs.map((doc)=>({
+      ...doc.data(),id:doc.id
+
+    }))
+    console.log("TEST_MODE........",data)
+
+    data.map(async(elem)=>{
+      const audio=query(collection(database,`users/${elem.id}/subjects`))
+      const audioj=await getDocs(audio)
+      const audiojj=audioj.docs.map((doc)=>({
+        ...doc.data(),id:doc.id
+
+      }))
+      console.log("TTTTTTTTestt mode...",audiojj)
+
+    })
+    const q1=query(collection(db,`users/06v8FzaAF1S4zCery67IZzE66Bb2/subjects`))
+    const snapshot1=await getDocs(q1)
+    const data1=snapshot1.docs.map((doc)=>({
+      ...doc.data(),id:doc.id
+
+    }))
+    console.log("TTThloo",data1)
+
+
+
+
+  }
+  getdata();
+
+},[filters])
 
   return (
     <div>

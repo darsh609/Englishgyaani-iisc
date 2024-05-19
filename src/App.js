@@ -91,7 +91,7 @@ function App() {
        
      
        <div className="mt-24 bg-neutral-500 ">
-       <Dashboard/>
+       {/* <Dashboard/> */}
        </div>
 
        <div className="mt-96 bg-orange-300 text-4xl text-center">
