@@ -35,7 +35,7 @@ const [audios, setAudios] = useState([]);
 
 //SETTING THE INPUTS IN THE ARRAY
 const handle=(event)=>{
-  console.log("TTTThandle--1",filters);
+  // console.log("TTTThandle--1",filters);
   let inputs={[event.target.name]:event.target.value}
   setData({...filters,...inputs})
   console.log("TTTTTThandle",filters);
@@ -132,16 +132,16 @@ useEffect(()=>{
   const getdata=async()=>{
     const db=getFirestore()
     const q=query(collection(db,'users'))
-    console.log("Query....." , q)
+    // console.log("Query....." , q)
     const snapshot=await getDocs(q)
     const data=snapshot.docs.map((doc)=>({
       ...doc.data(),id:doc.id
 
     }))
-    console.log("TEST_MODE........",data)
+     console.log("TEST_MODE........",data)
 
     data.map(async(elem)=>{
-      const audio=query(collection(database,`users/${elem.id}/subjects`))
+      const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
       const audioj=await getDocs(audio)
       const audiojj=audioj.docs.map((doc)=>({
         ...doc.data(),id:doc.id
@@ -161,14 +161,67 @@ useEffect(()=>{
 
 
 
+
+//working fetching code.........
+    const q3=query(collection(db,`users/Anonymous/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
+    const snapshot3=await getDocs(q3)
+    const data3=snapshot3.docs.map((doc)=>({
+      ...doc.data(),id:doc.id
+
+    }))
+    await setAudios(data3);
+    console.log("WE need Audio of the below files .. ",audios);
+    console.log("TTT...hloo....333",data3)
+
+  
+
+    
+
+    
+
+
+
+
   }
   getdata();
 
 },[filters])
 
   return (
-    <div>
-      <div className='text-2xl text-center mb-32'>
+    <div >
+      <div className=' bg-blue-400 text-3xl text-center'>
+        PENDING WORK.............................................
+
+        <li>
+          Frontend
+        </li>
+        <li>
+          Making a Proper form design ....
+          
+        </li>
+        
+            
+            <li>
+            attractive UI
+              </li>
+        <li>
+          Text-Area-for keywords
+        </li>
+        <li>
+          Fetching Audio
+        </li>
+        <li>
+          Displaying Audio
+        </li>
+        <li>
+          Responsiveness
+
+        </li>
+        <li>
+          Auth-if required
+        </li>
+      </div>
+      <div className='text-2xl text-center mb-32 mt-24'>
         ENTER THE DETAILS
 
       </div>
@@ -259,7 +312,27 @@ useEffect(()=>{
             </button>
 
 </div>
-            
+
+<div className='align-middle bg-lime-300'>
+<table className="table  text-4xl border-spacing-10 border-separate border-slate-900  mx-auto">
+            <tr>
+                <th>Name</th>
+                <th>Recordings-Recorded</th>
+                <th>Mother-Tounge</th>
+            </tr>
+  
+            {audios.map((student, index) => (
+              <tr data-index={index} >
+                <td className='border border-slate-900'>{student.name}</td>
+                <td className='border border-slate-900'>{student.recordingsRecorded}</td>
+                <td className='border border-slate-900'>{student.mt}</td>
+              </tr>
+            ))}
+  
+        </table>
+  
+</div>
+             
             
             </div>
             
