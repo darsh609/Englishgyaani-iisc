@@ -1,0 +1,13 @@
+[
+    { "key": "M",
+        "name": "male"
+        },
+        {
+        "key": "F",
+        "name": "female"
+        },
+        {
+        "key": "Oth",
+        "name": "other"
+        }
+]
