@@ -284,8 +284,8 @@ const getAudio=()=>{
 // const list=storage.child();
 const storage = getStorage();
 audioId?.map((ele)=>(
-  const s=ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
-  
+  ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
+
 
 ))
 
