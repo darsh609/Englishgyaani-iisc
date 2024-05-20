@@ -4,6 +4,16 @@ import {getAuth,signInWithEmailAndPassword} from "firebase/auth"
 import {database,firebaseApp} from "./firebase";
 import state from "./data/state.json"
 import gender from "./data/gender.json"
+// import firebase from "./firebase";
+
+
+
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+
+// Create a reference with an initial file path and name
+
+// import firebase from "firebase/app"
+// import "firebase/storage"
 // import db from './firebase'
 import{
     collection,
@@ -30,7 +40,12 @@ const [filters,setData]=useState({
     moth:''
 })
 //FOR SETTING THE AUIDO
-const [audios, setAudios] = useState([]);
+const [audios, setAudios] = useState([]);//to save all the information of whose audio is being fetched
+
+const [audioId,setid]=useState([]);//to save all the ids
+
+const[audioLink,setlink]=useState([])
+
 
 
 //SETTING THE INPUTS IN THE ARRAY
@@ -42,6 +57,11 @@ const handle=(event)=>{
 
 
 }
+
+
+
+
+
 //  useEffect(()=>{
 //   const hg=handle();
  
@@ -127,7 +147,7 @@ const handle=(event)=>{
 
 
 
-
+//Whole fetching is still in useeffect
 useEffect(()=>{
   const getdata=async()=>{
     const db=getFirestore()
@@ -162,30 +182,118 @@ useEffect(()=>{
 
 
 
-//working fetching code.........
-    const q3=query(collection(db,`users/Anonymous/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
-    const snapshot3=await getDocs(q3)
-    const data3=snapshot3.docs.map((doc)=>({
-      ...doc.data(),id:doc.id
 
-    }))
-    await setAudios(data3);
-    console.log("WE need Audio of the below files .. ",audios);
-    console.log("TTT...hloo....333",data3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//working fetching code.........
+if(filters.moth){
+
+  const q3=query(collection(db,`users/Anonymous/subjects`),
+
+  where('origin','==',filters.statet),
+  where('gender','==',filters.gendert),
+  where('mt','==',filters.moth))
+
+  const snapshot3=await getDocs(q3)
+  const data3=snapshot3.docs.map((doc)=>({
+    ...doc.data(),id:doc.id
+
+  }))
+ setAudios(data3);
+ 
+  console.log("WE need Audio of the below files .. ",audios);
+  console.log("TTT...hloo....333",data3)
+
+
+}
+else{
+
+  const q3=query(collection(db,`users/Anonymous/subjects`),
+
+  where('origin','==',filters.statet),
+  where('gender','==',filters.gendert),
+  )
+
+  const snapshot3=await getDocs(q3)
+  const data3=snapshot3.docs.map((doc)=>({
+    ...doc.data(),id:doc.id
+
+  }))
+ setAudios(data3);
+  console.log("WE need Audio of the below files .. ",audios);
+  console.log("TTT...hloo....333",data3)
+
+
+}
+
+
 
   
 
-    
-
-    
-
-
-
+//
 
   }
   getdata();
 
 },[filters])
+
+
+
+
+useEffect(()=>{
+
+const ids=audios?.map((student, index) => (
+    {id:student.id}
+  ))
+  setid(ids)
+  console.log("Id...is here...",audioId);
+},[audios])
+
+const getAudio=()=>{
+  
+  //gs://imprint2024.appspot.com
+  //2023...2024
+  //2023-12-24-id-english-audio
+  //2023-12-27-id-id-english-audio
+
+  //2024-01-(17..20,23)-id-id-english
+  //2024-03-(9.16,19..30)
+  //2024-04-(2,3,9,19,21)
+  //2024-4-9-anonymus-id-eng
+  //2024-5-(6,10,17,18,19)
+  //2024-5-6-anonymus-id
+
+
+  // gs://imprint2024.appspot.com/2024/04/09/Anonymous/XQyXKDi96VqvhnWHHREj/english/_Anonymous_XQyXKDi96VqvhnWHHREj_english_201_1712654331369.wav
+//gs://imprint2024.appspot.com/2024/03/10/PM0TzYnFNvdaNiRGmA9djuZSJmD3/PM0TzYnFNvdaNiRGmA9djuZSJmD3/english/_PM0TzYnFNvdaNiRGmA9djuZSJmD3_PM0TzYnFNvdaNiRGmA9djuZSJmD3_english_357_1710078589246.wav
+
+// const storage=firebase.storage().ref()
+// const list=storage.child();
+const storage = getStorage();
+audioId?.map((ele)=>(
+  const s=ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
+  
+
+))
+
+
+
+}
+
+
 
   return (
     <div >
@@ -304,7 +412,7 @@ useEffect(()=>{
 </div>
 
 <div>
-<button  className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
+<button  onClick={getAudio} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
                 Submit
 
 
@@ -321,16 +429,25 @@ useEffect(()=>{
                 <th>Mother-Tounge</th>
             </tr>
   
-            {audios.map((student, index) => (
+            {audios?.map((student, index) => (
               <tr data-index={index} >
                 <td className='border border-slate-900'>{student.name}</td>
                 <td className='border border-slate-900'>{student.recordingsRecorded}</td>
                 <td className='border border-slate-900'>{student.mt}</td>
+                <td className='border border-slate-900'>{student.id}</td>
               </tr>
             ))}
   
         </table>
   
+</div>
+
+<div>
+  {
+    audioId?.map((ab)=>(
+      <h1>{ab.id}</h1>
+    ))
+  }
 </div>
              
             
