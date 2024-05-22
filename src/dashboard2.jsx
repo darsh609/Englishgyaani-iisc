@@ -8,7 +8,7 @@ import gender from "./data/gender.json"
 
 
 
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 
 // Create a reference with an initial file path and name
 
@@ -283,12 +283,21 @@ const getAudio=()=>{
 // const storage=firebase.storage().ref()
 // const list=storage.child();
 const storage = getStorage();
-audioId?.map((ele)=>(
-  ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
+// audioId?.map((ele)=>(
+//   ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
 
 
-))
+// ))
+const d=ref(storage,`2023/12/24/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/english`)
+listAll(d).then((res)=>res.items.forEach((x)=>{
+var t=audioLink;
 
+  t.push(x);
+  setlink(t)
+
+}))
+console.log("audiolink==>>",audioLink
+)
 
 
 }
@@ -412,7 +421,7 @@ audioId?.map((ele)=>(
 </div>
 
 <div>
-<button  onClick={getAudio} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
+<button  onClick={()=>(getAudio)} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
                 Submit
 
 

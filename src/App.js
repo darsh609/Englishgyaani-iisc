@@ -100,6 +100,23 @@ function App() {
 </br>
 <br>
 </br>
+<div className=" bg-teal-200">
+  <h1>Doubts</h1>
+  <li>make fields in the database ,Either it is not possible to fetch ids by using query</li>
+  <li>using anonymus - in which the fieldsare there, I fetched some ids </li>
+  <li>
+    by using ida we can fetch the audio links
+  </li>
+  <li>
+    now the problem comes --since in the cloud storage there are number of folders,
+    we have to make a number of permutations of every type and then apply the logic.
+    
+  </li>
+  <li>
+    Also I m getting problem in fetching on applying map function from cloud storage
+  </li>
+
+</div>
         <Dashboard2/>
 
        </div>
