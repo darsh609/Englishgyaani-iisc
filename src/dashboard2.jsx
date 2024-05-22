@@ -44,9 +44,9 @@ const [audios, setAudios] = useState([]);//to save all the information of whose 
 
 const [audioId,setid]=useState([]);//to save all the ids
 
-const[audioLink,setlink]=useState([])
+const[audioinfo,setaudioinfo]=useState([])
 
-
+const[audiolink,setaudlink]=useState([])
 
 //SETTING THE INPUTS IN THE ARRAY
 const handle=(event)=>{
@@ -237,7 +237,16 @@ else{
   console.log("TTT...hloo....333",data3)
 
 
+
+
+
+
+
+
+
 }
+
+
 
 
 
@@ -246,7 +255,17 @@ else{
 //
 
   }
+// copying links to an array(NOT WORKING)
+  const savelinks=()=>{
+    audioinfo.map((e)=>(
+      console.log("audioinfo....",e.service.name)
+  
+  
+      ))
+  
+  }
   getdata();
+  savelinks();
 
 },[filters])
 
@@ -262,6 +281,15 @@ const ids=audios?.map((student, index) => (
   console.log("Id...is here...",audioId);
 },[audios])
 
+
+
+
+
+
+
+
+// get audio funcytion
+
 const getAudio=()=>{
   
   //gs://imprint2024.appspot.com
@@ -275,6 +303,9 @@ const getAudio=()=>{
   //2024-4-9-anonymus-id-eng
   //2024-5-(6,10,17,18,19)
   //2024-5-6-anonymus-id
+  console.log("audioinfooo11111k==>>",audioinfo)
+
+
 
 
   // gs://imprint2024.appspot.com/2024/04/09/Anonymous/XQyXKDi96VqvhnWHHREj/english/_Anonymous_XQyXKDi96VqvhnWHHREj_english_201_1712654331369.wav
@@ -290,14 +321,23 @@ const storage = getStorage();
 // ))
 const d=ref(storage,`2023/12/24/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/english`)
 listAll(d).then((res)=>res.items.forEach((x)=>{
-var t=audioLink;
+var t=audioinfo;
 
   t.push(x);
-  setlink(t)
+  setaudioinfo(t)
 
 }))
-console.log("audiolink==>>",audioLink
-)
+console.log("audioinfo222==>>",audioinfo)
+
+
+  audioinfo?.map((e)=>(
+    console.log("audioinfo....",e.service.name)
+
+
+    ))
+
+
+
 
 
 }
@@ -421,7 +461,7 @@ console.log("audiolink==>>",audioLink
 </div>
 
 <div>
-<button  onClick={()=>(getAudio)} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
+<button  onClick={getAudio} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl'>
                 Submit
 
 

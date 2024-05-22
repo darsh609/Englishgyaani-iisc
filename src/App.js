@@ -115,6 +115,9 @@ function App() {
   <li>
     Also I m getting problem in fetching on applying map function from cloud storage
   </li>
+  <li>Not able to get link from the data fetched using id from cloud\
+    
+  </li>
 
 </div>
         <Dashboard2/>
