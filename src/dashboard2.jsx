@@ -5,6 +5,7 @@ import {database,firebaseApp} from "./firebase";
 import state from "./data/state.json"
 import gender from "./data/gender.json"
 import { Audio } from './Audio';
+// import firebase from 'firebase/app'
 // import * as admin from 'firebase-admin'
 //import { initializeApp } from 'firebase-admin/app';
 //import firebase from "./firebase";
@@ -309,7 +310,7 @@ const ids=audioAllData?.map((student, index) => (
   setid(ids)
   console.log("Id...is here...",audioId);
   
-console.log("checkingg-audioID",Array.isArray(audioId))
+// console.log("checkingg-audioID",Array.isArray(audioId))
 },[audioAllData])
 
 
@@ -323,90 +324,120 @@ console.log("checkingg-audioID",Array.isArray(audioId))
 
 // get audio funcytion
 
-useEffect(()=>{
-  const getAudio=()=>{
+// useEffect(()=>{
+//   const getAudio=()=>{
   
-    //gs://imprint2024.appspot.com
-    //2023...2024
-    //2023-12-24-id-english-audio
-    //2023-12-27-id-id-english-audio
+//     //gs://imprint2024.appspot.com
+//     //2023...2024
+//     //2023-12-24-id-english-audio
+//     //2023-12-27-id-id-english-audio
   
-    //2024-01-(17..20,23)-id-id-english
-    //2024-03-(9.16,19..30)
-    //2024-04-(2,3,9,19,21)
-    //2024-4-9-anonymus-id-eng
-    //2024-5-(6,10,17,18,19)
-    //2024-5-6-anonymus-id
-    // console.log("audioinfooo11111k==>>",audioinfo)
+//     //2024-01-(17..20,23)-id-id-english
+//     //2024-03-(9.16,19..30)
+//     //2024-04-(2,3,9,19,21)
+//     //2024-4-9-anonymus-id-eng
+//     //2024-5-(6,10,17,18,19)
+//     //2024-5-6-anonymus-id
+//     // console.log("audioinfooo11111k==>>",audioinfo)
   
-console.log("checkingg-before",Array.isArray(audioinfo))
-console.log("checkingg-before",Array.isArray(audiolink))
-  
-  
-  
-    // gs://imprint2024.appspot.com/2024/04/09/Anonymous/XQyXKDi96VqvhnWHHREj/english/_Anonymous_XQyXKDi96VqvhnWHHREj_english_201_1712654331369.wav
-  //gs://imprint2024.appspot.com/2024/03/10/PM0TzYnFNvdaNiRGmA9djuZSJmD3/PM0TzYnFNvdaNiRGmA9djuZSJmD3/english/_PM0TzYnFNvdaNiRGmA9djuZSJmD3_PM0TzYnFNvdaNiRGmA9djuZSJmD3_english_357_1710078589246.wav
-  
-  // const storage=firebase.storage().ref()
-  // const list=storage.child();
+// console.log("checkingg-before",Array.isArray(audioinfo))
+// console.log("checkingg-before",Array.isArray(audiolink))
   
   
   
+//     // gs://imprint2024.appspot.com/2024/04/09/Anonymous/XQyXKDi96VqvhnWHHREj/english/_Anonymous_XQyXKDi96VqvhnWHHREj_english_201_1712654331369.wav
+//   //gs://imprint2024.appspot.com/2024/03/10/PM0TzYnFNvdaNiRGmA9djuZSJmD3/PM0TzYnFNvdaNiRGmA9djuZSJmD3/english/_PM0TzYnFNvdaNiRGmA9djuZSJmD3_PM0TzYnFNvdaNiRGmA9djuZSJmD3_english_357_1710078589246.wav
+  
+//   // const storage=firebase.storage().ref()
+//   // const list=storage.child();
   
   
-  ///////for storage*********************************************7777777777777777755542324225
-  const storage = getStorage();
-  // audioId?.map((ele)=>(
-  //   ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
   
   
-  // ))
-  const d=ref(storage,`2023/12/24/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/english`)
   
-  const f=  listAll(d).then((res)=>res.items.map((x)=>(
-    {link:x.name}
+//   ///////for storage*********************************************7777777777777777755542324225
+//   const storage =getStorage();
+//   // audioId?.map((ele)=>(
+//   //   ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
+  
+  
+//   // ))
 
-  )
+//   const d=ref(storage,`2023/12/24/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/english`)
+  
+//   const f=  listAll(d).then((res)=>res.items.map((x)=>(
+//     {link:x.name}
+
+//   )
     
-    //   //improve
-    // var t=audioinfo;
+//     //   //improve
+//     // var t=audioinfo;
     
-    //   t.push(x);
-    //   setaudioinfo(t)
-  ))
-  setaudioinfo(f);
-  //  const h= audioinfo?.forEach((e,index)=>(
-  //     // let y=audiolink;
-  //     //  y.push({link:e.name});
-  //     // setaudlink(y);
-  //    {link:e.name}
+//     //   t.push(x);
+//     //   setaudioinfo(t)
+//   ))
+//   setaudioinfo(f);
+//   //  const h= audioinfo?.forEach((e,index)=>(
+//   //     // let y=audiolink;
+//   //     //  y.push({link:e.name});
+//   //     // setaudlink(y);
+//   //    {link:e.name}
       
   
-  //  ))
-  // setaudlink(h)
-    console.log("audioinfo=====>>>",audioinfo);
-    setaudlink(audioinfo)
-    console.log("audiolink=====>>",audiolink);
-console.log("checkingg-f",Array.isArray(audioinfo))
-console.log("checkingg",Array.isArray(audiolink))   
+//   //  ))
+//   // setaudlink(h)
+//     console.log("audioinfo=====>>>",audioinfo);
+//     setaudlink(audioinfo)
+//     console.log("audiolink=====>>",audiolink);
+// console.log("checkingg-f",Array.isArray(audioinfo))
+// console.log("checkingg",Array.isArray(audiolink))   
   
   
-  // console.log("audioinfo222==>>",audioinfo.valueOf())
+//   // console.log("audioinfo222==>>",audioinfo.valueOf())
   
-  console.log("TYPE OF AUDIO INFO",typeof audioinfo)
-  // console.log("audioinfo test",audioinfo.values)
-  }
-  // const linklaga=()=>{
-  // //////////////////////////////////////////////////////////////////
-  //        // setchanged(false)
-  // }
-  getAudio();
+//   console.log("TYPE OF AUDIO INFO",typeof audioinfo)
+//   // console.log("audioinfo test",audioinfo.values)
+//   }
+//   // const linklaga=()=>{
+//   // //////////////////////////////////////////////////////////////////
+//   //        // setchanged(false)
+//   // }
+//   getAudio();
 
 
 
 
 
 
+// },[filters])
+useEffect(()=>{
+  const getthat=()=>{
+    const storage = getStorage();
+    const rough=[]
+    const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
+  files.map( 
+    (filename) => {
+     
+        
+        listAll(ref( storage, `2023/12/24/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+          
+        );
+  });
+
+  
+console.log("ROUGH-->",rough)
+setaudioinfo(rough)
+console.log("AUDIO-INFO",audioinfo)
+}
+ 
+getthat();
 },[filters])
 
 
@@ -529,45 +560,13 @@ console.log("checkingg",Array.isArray(audiolink))
 </div>
 
 <div>
-<button   className='w-[180px] mt-24 bg-emerald-400 mtext-2xl' onClick={()=>(setsubmit(true))}>
+<button   className='w-[180px] mt-24 bg-emerald-400 mtext-2xl' >
                 Submit
 
 
 
             </button>
 
-</div>
-
-<div className='align-middle bg-lime-300'>
-<table className="table  text-xs border-spacing-10 border-separate border-slate-900  mx-auto">
-            <tr>
-                <th>Name</th>
-                <th>Recordings-Recorded</th>
-                <th>Mother-Tounge</th>
-            </tr>
-  
-            {audioAllData?.map((student, index) => (
-              <tr data-index={index} >
-                {/* <td className='border border-slate-900'>{student.name}</td>
-                <td className='border border-slate-900'>{student.recordingsRecorded}</td>
-                <td className='border border-slate-900'>{student.mt}</td> */}
-                <td className='border border-slate-900'>{student.id}</td>
-              </tr>
-            ))}
-  
-        </table>
-  
-</div>
-
-<div>
-  {
-    audioId?.map((ab,i)=>(
-      <h1 key={i}>{ab.id}</h1>
-    ))
-  }
-</div>
-<div className=' text-teal-500'>
-  LINKS
 </div>
 <div>
   
@@ -577,11 +576,12 @@ console.log("checkingg",Array.isArray(audiolink))
 //I M UNABLE TO GET THE DATA INSIDE IT
 
 
-// Array.isArray(audioinfo)&&audioinfo?.map((ab,i)=>(
-//       <h1 key={i}><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">audio{i} -{ab.link}
-//         </a></h1>
-//         //https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f
-//     ))
+audioinfo.map((ab,i)=>(
+      <h1 key={i}><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">
+   audio-{i} - {ab.link} 
+        </a></h1>
+        //https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f
+    ))
 
 
 
@@ -593,12 +593,57 @@ console.log("checkingg",Array.isArray(audiolink))
 //   ))
 
 // })
+
+// Object.keys(audioinfo).map((key)=>{
+//   <h3>{key}:{audioinfo.key.link}</h3>
+// })
+
+
+
   }
 </div>
-<div>
+
+<div className='align-middle bg-lime-300'>
+
+
+<table className="table  text-xs border-spacing-10 border-separate border-slate-900  mx-auto">
+            {/* <tr>
+                <th>Name</th>
+                <th>Recordings-Recorded</th>
+                <th>Mother-Tounge</th>
+            </tr> */}
+  
+            {
+            // audioAllData?.map((student, index) => (
+            //   <tr data-index={index} >
+            //     {/* <td className='border border-slate-900'>{student.name}</td>
+            //     <td className='border border-slate-900'>{student.recordingsRecorded}</td>
+            //     <td className='border border-slate-900'>{student.mt}</td> */}
+            //     {/* <td className='border border-slate-900'>{student.id}</td> */}
+            //   </tr>
+            // ))
+            }
+  
+      </table>
+        
+  
+</div>
+
+{/* <div>
+  {
+    audioId?.map((ab,i)=>(
+      <h1 key={i}>{ab.id}</h1>
+    ))
+  }
+</div> */}
+<div className=' text-teal-500'>
+  LINKS
+</div>
+
+{/* <div>
   <Audio audiolink={audiolink}/>
 
-</div>
+</div> */}
              
             
             </div>
