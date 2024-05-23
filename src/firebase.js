@@ -14,8 +14,8 @@ const firebaseConfig = {
   projectId: "imprint2024",
   storageBucket: "imprint2024.appspot.com",
   messagingSenderId: "7107950993",
-  appId: "1:7107950993:web:ff72820730f2d7c04e8230",
-  measurementId: "G-CW9HS8Q7YF"
+  appId: "1:7107950993:web:48c8f399fe2132864e8230",
+  measurementId: "G-F5VEPRL0PJ"
 };
 
 // Initialize Firebase

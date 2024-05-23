@@ -102,7 +102,7 @@ function App() {
 </br>
 <div className=" bg-teal-200">
   <h1>Doubts</h1>
-  <li>make fields in the database ,Either it is not possible to fetch ids by using query</li>
+  
   <li>using anonymus - in which the fieldsare there, I fetched some ids </li>
   <li>
     by using ida we can fetch the audio links
@@ -117,6 +117,39 @@ function App() {
   </li>
   <li>Not able to get link from the data fetched using id from cloud\
     
+  </li>
+
+  <li className="  mt-32 text-4xl text-amber-900">
+    <li>
+      NOT WORKING ON CLICK
+
+      //FORM
+    </li>
+    <li>
+      ON MULTIPLE CLICKS MULTIPLE TIME SAVE
+
+      //form
+    </li>
+    <li>
+      HOW TO USE LINK TO GET AUDIOS
+    </li>
+
+    <li>make fields in the database ,Either it is not possible to fetch ids by using query</li>
+
+    <li>
+      CLOUD STORAGE HAS NUMBER OF FOLDERS
+    </li>
+    <li>
+      applyimg map function on cloud
+    </li>
+    <li>
+      NOT ABLE TO SHOW LINKS ON FRONTEND-LINE 576 Dashboard2
+
+    </li>
+    <li>
+      HOW TO SAVE USESTATE ARRAY WHILE LOOP
+    </li>
+
   </li>
 
 </div>
