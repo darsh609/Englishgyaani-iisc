@@ -162,7 +162,8 @@ useEffect(()=>{
       ...doc.data(),id:doc.id
 
     }))
-   console.log("ALL THE IDS OTHER THAN",data)
+    //FETCHED ALL THE IDS SUCCESSFULLY
+   console.log("ALL THE IDS ",data)
 
     
   if(filters.moth){
@@ -222,50 +223,48 @@ console.log("WE need Audio of the beloW INFOO .. ",audioAllData);
 
 
 
-else{
+// else{
 
-  const g=[];
-    data.map(async(elem)=>{
-      const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert))
-      const audioj=await getDocs(audio)
-      const audiojj=audioj?.docs?.map((doc)=>({
-        id:doc.id
+//   const g=[];
+//     data.map(async(elem)=>{
+//       const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert))
+//       const audioj=await getDocs(audio)
+//       const audiojj=audioj?.docs?.map((doc)=>({
+//         id:doc.id
 
-      }))
-      // if(audiojj != null){
-      //   g.push(audiojj)
+//       }))
+//       // if(audiojj != null){
+//       //   g.push(audiojj)
 
-      // }
-      setaudioAllData((prev)=>[...prev,audiojj])
+//       // }
+//       setaudioAllData((prev)=>[...prev,audiojj])
          
       
 
-    })
-    console.log("FILTERED INFO OTHE THAN ANONYMUS(G)",audioAllData)
+//     })
+//     console.log("FILTERED INFO OTHE THAN ANONYMUS(G)",audioAllData)
     
-      // setaudioAllData(g)
+//       // setaudioAllData(g)
     
   
 
 
 
-  // const q3=query(collection(db,`users/Anonymous/subjects`),
+//   // const q3=query(collection(db,`users/Anonymous/subjects`),
 
-  // where('origin','==',filters.statet),
-  // where('gender','==',filters.gendert),
-  // )
+//   // where('origin','==',filters.statet),
+//   // where('gender','==',filters.gendert),
+//   // )
 
-  // const snapshot3=await getDocs(q3)
-  // const data3=snapshot3.docs?.map((doc)=>({
-  //   ...doc.data(),id:doc.id
+//   // const snapshot3=await getDocs(q3)
+//   // const data3=snapshot3.docs?.map((doc)=>({
+//   //   ...doc.data(),id:doc.id
 
-  // }))
-  // setaudioAllData((prev)=>[...prev,data3]);
-  console.log("WE need Audio of the below INFOOO .. ",audioAllData);
+//   // }))
+//   // setaudioAllData((prev)=>[...prev,data3]);
+//   console.log("WE need Audio of the below INFOOO .. ",audioAllData);
 
-  // console.log("FILTERED INFO OF ANONYMUS",data3)
-
-
+//   // console.log("FILTERED INFO OF ANONYMUS",data3)
 
 
 
@@ -273,7 +272,9 @@ else{
 
 
 
- }
+
+
+//  }
 
 
 
@@ -414,6 +415,7 @@ useEffect(()=>{
   const getthat=()=>{
     const storage = getStorage();
     const rough=[]
+    //in this array we store our ids that the query wants
     const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
   files.map( 
     (filename) => {
@@ -576,7 +578,7 @@ getthat();
 //I M UNABLE TO GET THE DATA INSIDE IT
 
 
-audioinfo.map((ab,i)=>(
+audioinfo?.map((ab,i)=>(
       <h1 key={i}><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">
    audio-{i} - {ab.link} 
         </a></h1>
