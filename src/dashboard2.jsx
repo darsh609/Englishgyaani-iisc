@@ -60,7 +60,7 @@ const handle=(event)=>{
   setchanged(true)
   let inputs={[event.target.name]:event.target.value}
   setData({...filters,...inputs})
-  console.log("TTTTTThandle",filters);
+  console.log("FILTERS APPLIED",filters);
 
 
 }
@@ -166,27 +166,42 @@ useEffect(()=>{
    console.log("ALL THE IDS ",data)
 
     
-  if(filters.moth){
 
-    const g=[];
+   //QUERY
+  if(filters.moth){
+const g=[];
+//     data.map(async(elem)=>{
+//       const f=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
+//       console.log("whats inside===>",f)     
+//         if(f != null){
+// g.push([elem.id])
+//       }
+
+//     })
+//     console.log("ALL THE REQUIRED IDS=======>",g);
+
+    
+setaudioAllData([])
+
     data.map(async(elem)=>{
       const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
       const audioj=await getDocs(audio)
       const audiojj=audioj?.docs?.map((doc)=>({
-        ...doc.data(),id:doc.id
+        id:doc.id
 
       }))
       // if(audiojj != null){
       //   g.push(audiojj)
 
       // }
-      setaudioAllData((prev)=>[...prev,audiojj])
+      if(audiojj.length>0){
+        setaudioAllData((prev)=>[...prev,audiojj])
+      }
+      
       
 
     })
-    console.log("FILTERED INFO OTHE THAN ANONYMUS(G)",audioAllData)
-      
-    
+    console.log("FILTERED Idssssssss allllllll-------->",audioAllData)
 
   //   const q3=query(collection(db,`users/Anonymous/subjects`),
   
@@ -213,8 +228,6 @@ useEffect(()=>{
 
 //working fetching code.........
 
-
-console.log("WE need Audio of the beloW INFOO .. ",audioAllData);
 
   }
 
@@ -306,8 +319,11 @@ console.log("WE need Audio of the beloW INFOO .. ",audioAllData);
 useEffect(()=>{
 
 const ids=audioAllData?.map((student, index) => (
-    {id:student.id}
-  ))
+    console.log("idss required==>>",{id:student.id})
+ 
+  )
+  
+)
   setid(ids)
   console.log("Id...is here...",audioId);
   
