@@ -29,6 +29,8 @@ import{
     onSnapshot,limit
 
 } from 'firebase/firestore'
+
+
 // const firestore =getFirestore(app);
 
 
@@ -53,6 +55,7 @@ const[audioinfo,setaudioinfo]=useState([]);
 const[audiolink,setaudlink]=useState([])
 const[changed,setchanged]=useState(false);
 const[submitted,setsubmit]=useState(false);
+const db=getFirestore()
 
 //SETTING THE INPUTS IN THE ARRAY
 const handle=(event)=>{
@@ -60,7 +63,7 @@ const handle=(event)=>{
   setchanged(true)
   let inputs={[event.target.name]:event.target.value}
   setData({...filters,...inputs})
-  console.log("FILTERS APPLIED",filters);
+  // console.log("FILTERS APPLIED",filters);
 
 
 }
@@ -154,7 +157,7 @@ const [usersId,setuser]=useState([]);
 //Whole fetching is still in useeffect
 useEffect(()=>{
   const getdata=async()=>{
-    const db=getFirestore()
+   
     const q=query(collection(db,'users'))
     // console.log("Query....." , q)
     const snapshot=await getDocs(q)
@@ -163,7 +166,7 @@ useEffect(()=>{
 
     }))
     //FETCHED ALL THE IDS SUCCESSFULLY
-   console.log("ALL THE IDS ",data)
+  //  console.log("ALL THE IDS ",data)
 
     
 
@@ -201,7 +204,8 @@ setaudioAllData([])
       
 
     })
-    console.log("FILTERED Idssssssss allllllll-------->",audioAllData)
+    console.log("AUDIO ALL DATA------------------->",audioAllData)
+    console.log("is2dornot==>>",is2DObject(audioAllData))
 
   //   const q3=query(collection(db,`users/Anonymous/subjects`),
   
@@ -232,7 +236,20 @@ setaudioAllData([])
   }
 
 
-  
+  function is2DObject(obj) {
+    for (const key in obj) {
+      if (Array.isArray(obj[key])) {
+        for (const item of obj[key]) {
+          if (Array.isArray(item)) {
+            return true; 
+          }
+        }
+      } else if (typeof obj[key] === 'object') {
+        return true; 
+      }
+    }
+    return false; 
+  }
 
 
 
@@ -317,18 +334,15 @@ setaudioAllData([])
 
 //deriving ids of audio
 useEffect(()=>{
-
-const ids=audioAllData?.map((student, index) => (
-    console.log("idss required==>>",{id:student.id})
- 
-  )
-  
-)
-  setid(ids)
-  console.log("Id...is here...",audioId);
+  setid(audioAllData[0])
+  audioId?.map((e)=>{
+    console.log({e})
+  })
   
 // console.log("checkingg-audioID",Array.isArray(audioId))
 },[audioAllData])
+console.log("AUDIO ID (REQUIRED ID A/C TO USERS  QUERY)===============>",audioId);
+
 
 
 
@@ -428,16 +442,17 @@ const ids=audioAllData?.map((student, index) => (
 
 // },[filters])
 useEffect(()=>{
+
   const getthat=()=>{
     const storage = getStorage();
     const rough=[]
     //in this array we store our ids that the query wants
-    const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
-  files.map( 
+    // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
+  audioId?.map( 
     (filename) => {
      
         
-        listAll(ref( storage, `2023/12/24/${filename}/${filename}/english` ))
+        listAll(ref( storage, `2023/12/24/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
           // rough.push(url.items)
@@ -445,14 +460,398 @@ useEffect(()=>{
             rough.push({link:x.name})
 
           ))
-          
-        );
+            );
+            listAll(ref( storage, `2023/12/27/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/01/17/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/01/18/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/01/19/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/01/20/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/01/23/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/09/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/10/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/11/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/12/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/14/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/15/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/16/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/19/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/20/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/21/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/22/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/23/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/24/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/25/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/26/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/27/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/28/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/29/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/03/31/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/04/02/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/04/03/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/04/09/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/04/19/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/04/21/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/05/06/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/05/10/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/05/17/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/05/18/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+            listAll(ref( storage, `2024/05/19/${filename.id}/${filename.id}/english` ))
+            .then( (url) => 
+              // console.log( "Got download url: ", url.items );
+              // rough.push(url.items)
+              url.items.map((x)=>(
+                rough.push({link:x.name})
+    
+              ))
+                );
+                listAll(ref( storage, `2024/05/22/${filename.id}/${filename.id}/english` ))
+                .then( (url) => 
+                  // console.log( "Got download url: ", url.items );
+                  // rough.push(url.items)
+                  url.items.map((x)=>(
+                    rough.push({link:x.name})
+        
+                  ))
+                    );
+                    listAll(ref( storage, `2024/05/23/${filename.id}/${filename.id}/english` ))
+                    .then( (url) => 
+                      // console.log( "Got download url: ", url.items );
+                      // rough.push(url.items)
+                      url.items.map((x)=>(
+                        rough.push({link:x.name})
+            
+                      ))
+                        );
+                        listAll(ref( storage, `2024/05/24/${filename.id}/${filename.id}/english` ))
+                        .then( (url) => 
+                          // console.log( "Got download url: ", url.items );
+                          // rough.push(url.items)
+                          url.items.map((x)=>(
+                            rough.push({link:x.name})
+                
+                          ))
+                            );
+                            listAll(ref( storage, `2024/05/25/${filename.id}/${filename.id}/english` ))
+                            .then( (url) => 
+                              // console.log( "Got download url: ", url.items );
+                              // rough.push(url.items)
+                              url.items.map((x)=>(
+                                rough.push({link:x.name})
+                    
+                              ))
+                                );
+                                listAll(ref( storage, `2024/05/26/${filename.id}/${filename.id}/english` ))
+                                .then( (url) => 
+                                  // console.log( "Got download url: ", url.items );
+                                  // rough.push(url.items)
+                                  url.items.map((x)=>(
+                                    rough.push({link:x.name})
+                        
+                                  ))
+                                    );
+                                    listAll(ref( storage, `2024/05/27/${filename.id}/${filename.id}/english` ))
+                                    .then( (url) => 
+                                      // console.log( "Got download url: ", url.items );
+                                      // rough.push(url.items)
+                                      url.items.map((x)=>(
+                                        rough.push({link:x.name})
+                            
+                                      ))
+                                        );
+                            
+                        
+                    
+                
+            
+        
+    
+
+
+
+
+
+
+
+
+
   });
 
   
-console.log("ROUGH-->",rough)
+console.log("THE TEMPO ARRAY ======>",rough)
 setaudioinfo(rough)
-console.log("AUDIO-INFO",audioinfo)
+console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 }
  
 getthat();
@@ -589,6 +988,7 @@ getthat();
 <div>
   
   {
+    // <h1>{audioinfo}</h1>
 
 //PROBLEM HERE IS THAT SINCE A PROMISE STATEMENT IS USED TO SAVE THE FILES IN AUDIO INFO 
 //I M UNABLE TO GET THE DATA INSIDE IT
@@ -619,6 +1019,7 @@ audioinfo?.map((ab,i)=>(
 
 
   }
+  
 </div>
 
 <div className='align-middle bg-lime-300'>
