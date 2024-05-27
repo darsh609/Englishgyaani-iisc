@@ -204,8 +204,8 @@ setaudioAllData([])
       
 
     })
-    console.log("AUDIO ALL DATA------------------->",audioAllData)
-    console.log("is2dornot==>>",is2DObject(audioAllData))
+    // console.log("AUDIO ALL DATA------------------->",audioAllData)
+    // console.log("is2dornot==>>",is2DObject(audioAllData))
 
   //   const q3=query(collection(db,`users/Anonymous/subjects`),
   
@@ -336,12 +336,12 @@ setaudioAllData([])
 useEffect(()=>{
   setid(audioAllData[0])
   audioId?.map((e)=>{
-    console.log({e})
+    console.log(e.id)
   })
   
 // console.log("checkingg-audioID",Array.isArray(audioId))
-},[audioAllData])
-console.log("AUDIO ID (REQUIRED ID A/C TO USERS  QUERY)===============>",audioId);
+},[filters])
+// console.log("AUDIO ID (REQUIRED ID A/C TO USERS  QUERY)===============>",audioId);
 
 
 
@@ -446,6 +446,7 @@ useEffect(()=>{
   const getthat=()=>{
     const storage = getStorage();
     const rough=[]
+    console.log("INSIDE GETHAT FUNCTION FOR")
     //in this array we store our ids that the query wants
     // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
   audioId?.map( 
@@ -479,6 +480,7 @@ useEffect(()=>{
 
           ))
             );
+
             listAll(ref( storage, `2024/01/18/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
@@ -486,7 +488,7 @@ useEffect(()=>{
           url.items.map((x)=>(
             rough.push({link:x.name})
 
-          ))
+           ))
             );
             listAll(ref( storage, `2024/01/19/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
@@ -704,7 +706,7 @@ useEffect(()=>{
 
           ))
             );
-            listAll(ref( storage, `2024/04/09/${filename.id}/${filename.id}/english` ))
+            listAll(ref( storage, `2024/04/09/Anonymous/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
           // rough.push(url.items)
@@ -722,7 +724,7 @@ useEffect(()=>{
 
           ))
             );
-            listAll(ref( storage, `2024/04/21/${filename.id}/${filename.id}/english` ))
+            listAll(ref( storage, `2024/04/21/Anonymous/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
           // rough.push(url.items)
@@ -740,6 +742,16 @@ useEffect(()=>{
 
           ))
             );
+            listAll(ref( storage, `2024/05/06/Anonymous/${filename.id}/${filename.id}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            rough.push({link:x.name})
+
+          ))
+            );
+
             listAll(ref( storage, `2024/05/10/${filename.id}/${filename.id}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
@@ -821,6 +833,15 @@ useEffect(()=>{
                         
                                   ))
                                     );
+                                    listAll(ref( storage, `2024/05/26/Anonymous/${filename.id}/${filename.id}/english` ))
+                                    .then( (url) => 
+                                      // console.log( "Got download url: ", url.items );
+                                      // rough.push(url.items)
+                                      url.items.map((x)=>(
+                                        rough.push({link:x.name})
+                            
+                                      ))
+                                        );
                                     listAll(ref( storage, `2024/05/27/${filename.id}/${filename.id}/english` ))
                                     .then( (url) => 
                                       // console.log( "Got download url: ", url.items );
@@ -977,14 +998,45 @@ getthat();
 </div>
 
 <div>
-<button   className='w-[180px] mt-24 bg-emerald-400 mtext-2xl' >
-                Submit
+<button  onClick={()=>(setsubmit(true))} className='w-[180px] mt-24 bg-emerald-400 mtext-2xl' >
+                Submittt
 
 
 
             </button>
 
 </div>
+<div className='align-middle bg-lime-300'>
+
+
+<table className="table  text-xs border-spacing-10 border-separate border-slate-900  mx-auto">
+            {/* <tr>
+                <th>Name</th>
+                <th>Recordings-Recorded</th>
+                <th>Mother-Tounge</th>
+            </tr> */}
+  
+            {
+            audioId?.map((student, index) => (
+              <tr data-index={index} >
+                {/* <td className='border border-slate-900'>{student.name}</td>
+                <td className='border border-slate-900'>{student.recordingsRecorded}</td>
+                <td className='border border-slate-900'>{student.mt}</td> */}
+                <td className='border border-slate-900'>{student.id}</td>
+              </tr>
+            ))
+            }
+  
+      </table>
+        
+  
+</div>
+{/* <div>
+  {
+    const g=audioinfo.length
+  }
+</div> */}
+
 <div>
   
   {
@@ -997,7 +1049,9 @@ getthat();
 audioinfo?.map((ab,i)=>(
       <h1 key={i}><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">
    audio-{i} - {ab.link} 
-        </a></h1>
+        </a>
+        
+        </h1>
         //https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f
     ))
 
@@ -1022,31 +1076,6 @@ audioinfo?.map((ab,i)=>(
   
 </div>
 
-<div className='align-middle bg-lime-300'>
-
-
-<table className="table  text-xs border-spacing-10 border-separate border-slate-900  mx-auto">
-            {/* <tr>
-                <th>Name</th>
-                <th>Recordings-Recorded</th>
-                <th>Mother-Tounge</th>
-            </tr> */}
-  
-            {
-            // audioAllData?.map((student, index) => (
-            //   <tr data-index={index} >
-            //     {/* <td className='border border-slate-900'>{student.name}</td>
-            //     <td className='border border-slate-900'>{student.recordingsRecorded}</td>
-            //     <td className='border border-slate-900'>{student.mt}</td> */}
-            //     {/* <td className='border border-slate-900'>{student.id}</td> */}
-            //   </tr>
-            // ))
-            }
-  
-      </table>
-        
-  
-</div>
 
 {/* <div>
   {
