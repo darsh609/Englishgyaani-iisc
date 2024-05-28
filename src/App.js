@@ -89,18 +89,15 @@ function App() {
        */}
       </div>
        
-     
-       <div className="mt-24 bg-neutral-500 ">
-       {/* <Dashboard/> */}
-       </div>
+{/*      
+       <div className=" mt-8">
 
-       <div className="mt-96 bg-orange-300 text-4xl text-center">
-        THIS IS FOR TESTING PURPOSE ,TO RESOLVE THE PROBLEM OF FETCHING 
-<br>
-</br>
-<br>
-</br>
-<div className=" bg-teal-200">
+        <Dashboard/> 
+       </div> */}
+
+       <div className="mt-8 text-4xl text-center">
+        
+{/* <div className="">
   <h1>Doubts</h1>
   
   <li>using anonymus - in which the fieldsare there, I fetched some ids </li>
@@ -152,7 +149,8 @@ function App() {
 
   </li>
 
-</div>
+</div> */}
+
         <Dashboard2/>
 
        </div>
