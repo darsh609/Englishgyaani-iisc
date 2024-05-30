@@ -1210,12 +1210,18 @@ getthat();
 
 
  <div className='align-middle text-center mx-auto w-[full] mt-32'>
-    <div>
+    
       <button onClick={()=>(setsubmit((prev)=>(!prev)))}
-      className="  rounded-3xl  text-2xl border-4  border-purple-500 bg-violet-200  p-2">
-        GET AUDIO <FaArrowRight />
-      </button>
-    </div>
+      className=" flex gap-3 mx-auto  rounded-3xl  text-2xl border-4  border-purple-500 bg-violet-200  p-2">
+        <div>
+        GET AUDIO
+        </div>
+        <div className=' mt-1'>
+        <FaArrowRight />
+
+        </div>
+               </button>
+
 
    <div className='align-middle text-center mx-auto'>
   OUTPUT Area
@@ -1284,7 +1290,7 @@ audioinfo?.map((ab,i)=>(
 </div> */}
 
 <div>
-  <Audio audiolink={audiolink}/>
+  <Audio audiolink={audioinfo}/>
 
 </div>
          </div>         
