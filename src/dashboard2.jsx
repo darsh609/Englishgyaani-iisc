@@ -5,6 +5,7 @@ import {database,firebaseApp} from "./firebase";
 import state from "./data/state.json"
 import gender from "./data/gender.json"
 import { Audio } from './Audio';
+import { FaArrowRight } from "react-icons/fa";
 // import firebase from 'firebase/app'
 // import * as admin from 'firebase-admin'
 //import { initializeApp } from 'firebase-admin/app';
@@ -92,713 +93,13 @@ setallid(g)
 //   console.log("---->",e.id)
 // })
 const rough=[]
-  console.log("ALL IDSSS",allid)
-  ?.map(
+  // console.log("ALL IDSSS",allid)
+//   ?.map(
      
-    (filename) => 
-      {
+//     (filename) => 
+//       {
       
 
-        listAll(ref( storage, `2023/12/24/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2023/12/27/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/01/17/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-
-            listAll(ref( storage, `2024/01/18/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-           ))
-            );
-            listAll(ref( storage, `2024/01/19/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/01/20/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/01/23/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/09/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/10/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/11/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/12/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/14/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/15/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/16/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/19/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/20/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/21/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/22/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/23/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/24/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/25/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/26/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/27/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/28/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/29/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/03/31/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/04/02/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/04/03/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/04/09/Anonymous/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/04/19/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/04/21/Anonymous/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/05/06/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/05/06/Anonymous/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-
-            listAll(ref( storage, `2024/05/10/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/05/17/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/05/18/${filename.id}/${filename.id}/english` ))
-        .then( (url) => 
-          // console.log( "Got download url: ", url.items );
-          // rough.push(url.items)
-          url.items.map((x)=>(
-            rough.push({link:x.name})
-
-          ))
-            );
-            listAll(ref( storage, `2024/05/19/${filename.id}/${filename.id}/english` ))
-            .then( (url) => 
-              // console.log( "Got download url: ", url.items );
-              // rough.push(url.items)
-              url.items.map((x)=>(
-                rough.push({link:x.name})
-    
-              ))
-                );
-                listAll(ref( storage, `2024/05/22/${filename.id}/${filename.id}/english` ))
-                .then( (url) => 
-                  // console.log( "Got download url: ", url.items );
-                  // rough.push(url.items)
-                  url.items.map((x)=>(
-                    rough.push({link:x.name})
-        
-                  ))
-                    );
-                    listAll(ref( storage, `2024/05/23/${filename.id}/${filename.id}/english` ))
-                    .then( (url) => 
-                      // console.log( "Got download url: ", url.items );
-                      // rough.push(url.items)
-                      url.items.map((x)=>(
-                        rough.push({link:x.name})
-            
-                      ))
-                        );
-                        listAll(ref( storage, `2024/05/24/${filename.id}/${filename.id}/english` ))
-                        .then( (url) => 
-                          // console.log( "Got download url: ", url.items );
-                          // rough.push(url.items)
-                          url.items.map((x)=>(
-                            rough.push({link:x.name})
-                
-                          ))
-                            );
-                            listAll(ref( storage, `2024/05/25/${filename.id}/${filename.id}/english` ))
-                            .then( (url) => 
-                              // console.log( "Got download url: ", url.items );
-                              // rough.push(url.items)
-                              url.items.map((x)=>(
-                                rough.push({link:x.name})
-                    
-                              ))
-                                );
-                                listAll(ref( storage, `2024/05/26/${filename.id}/${filename.id}/english` ))
-                                .then( (url) => 
-                                  // console.log( "Got download url: ", url.items );
-                                  // rough.push(url.items)
-                                  url.items.map((x)=>(
-                                    rough.push({link:x.name})
-                        
-                                  ))
-                                    );
-                                    listAll(ref( storage, `2024/05/26/Anonymous/${filename.id}/${filename.id}/english` ))
-                                    .then( (url) => 
-                                      // console.log( "Got download url: ", url.items );
-                                      // rough.push(url.items)
-                                      url.items.map((x)=>(
-                                        rough.push({link:x.name})
-                            
-                                      ))
-                                        );
-                                    listAll(ref( storage, `2024/05/27/${filename.id}/${filename.id}/english` ))
-                                    .then( (url) => 
-                                      // console.log( "Got download url: ", url.items );
-                                      // rough.push(url.items)
-                                      url.items.map((x)=>(
-                                        rough.push({link:x.name})
-                            
-                                      ))
-                                        );
-                                        // const d=JSON.stringify(rough)
-                                        // console.log("Testing ",d)
-                                        //          localStorage.setItem(filename.id,d)                    
-          
-  }
- 
-    
-  
-);
-
-
-
-
-  }
-
-
-  saveinlocal();
-  
-
-},[])
-
-
-
-useEffect(()=>{
-  //SAVING ALL THE IDS FROM THE LOCAL STORAGE TO CONST DATA //
-   const getdata=async()=>{
-   const data=JSON.parse(localStorage.getItem("allId"))||[]//FETCHED ALL THE IDS SUCCESSFULLY
-   console.log("ALL THE IDS(DATA) ",data)
-
-    
-
-   //QUERY
-  if(filters.moth){
-
-//     data.map(async(elem)=>{
-//       const f=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
-//       console.log("whats inside===>",f)     
-//         if(f != null){
-// g.push([elem.id])
-//       }
-
-//     })
-//     console.log("ALL THE REQUIRED IDS=======>",g);
-
-  
-setaudioAllData([])
-
-
-    data.map(async(elem)=>{
-      const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
-      const audioj=await getDocs(audio)
-      const audiojj=audioj?.docs?.map((doc)=>({
-        id:doc.id
-
-      }))
-      // if(audiojj != null){
-      //   g.push(audiojj)
-
-      // }
-      if(audiojj.length>0){
-        setaudioAllData((prev)=>[...prev,audiojj])
-      }
-    })
-    console.log("AUDIO ALL DATA-*****************************------------------>",audioAllData)
-  
-  }
-  function is2DObject(obj) {
-    for (const key in obj) {
-      if (Array.isArray(obj[key])) {
-        for (const item of obj[key]) {
-          if (Array.isArray(item)) {
-            return true; 
-          }
-        }
-      } else if (typeof obj[key] === 'object') {
-        return true; 
-      }
-    }
-    return false; 
-  }
-
-// else{
-
-//   const g=[];
-//     data.map(async(elem)=>{
-//       const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert))
-//       const audioj=await getDocs(audio)
-//       const audiojj=audioj?.docs?.map((doc)=>({
-//         id:doc.id
-
-//       }))
-//       // if(audiojj != null){
-//       //   g.push(audiojj)
-
-//       // }
-//       setaudioAllData((prev)=>[...prev,audiojj])
-         
-      
-
-//     })
-//     console.log("FILTERED INFO OTHE THAN ANONYMUS(G)",audioAllData)
-    
-//       // setaudioAllData(g)
-    
-  
-
-
-
-//   // const q3=query(collection(db,`users/Anonymous/subjects`),
-
-//   // where('origin','==',filters.statet),
-//   // where('gender','==',filters.gendert),
-//   // )
-
-//   // const snapshot3=await getDocs(q3)
-//   // const data3=snapshot3.docs?.map((doc)=>({
-//   //   ...doc.data(),id:doc.id
-
-//   // }))
-//   // setaudioAllData((prev)=>[...prev,data3]);
-//   console.log("WE need Audio of the below INFOOO .. ",audioAllData);
-
-//   // console.log("FILTERED INFO OF ANONYMUS",data3)
-
-
-
-
-
-
-
-
-
-//  }
-
-
-
-
-
-  
-
-//
-
-  }
-// copying links to an array(NOT WORKING)
-  // const savelinks=()=>{
-  //   audioinfo?.map((e)=>(
-  //     console.log("audioinfo....",e.service.name)
-  
-  
-  //     ))
-  
-  // }
-  getdata();
-},[filters])
-
-
-
-//deriving ids of audio
-const  Test=()=>{
-
-}
-useEffect(()=>{
-  const saveid=()=>{
-    const h=audioAllData.length
-  console.log("length of audioAllData",h)
-  // setid(audioAllData[0])
-  // audioId?.map((e)=>{
-  //   console.log(e.id)
-  // })
-
-const g=[]
-setid([])
-for(let i=0;i<h;i++){
-// console.log("checking audioID====>",audioAllData[i],i)
-audioAllData[i]?.map((e)=>(
-// g.push(e.id)
-setid((prev)=>[...prev,e.id])
-))
-//data
-// console.log("Data---------->",);
-// data.map((e)=>(
-// ))
-}
-// console.log("G---------->",g);
-// setid(g)
-console.log("AUDIO ID------------>",audioId);
-setdisplay(audioId)
-console.log("DISPLAY ===>> ID------------>",displayid);
-
-  }
-  saveid();
-// console.log("checkingg-audioID",Array.isArray(audioId))
-},[audioAllData])
-
-// console.log("AUDIO ID (REQUIRED ID A/C TO USERS  QUERY)===============>",audioId);
-// get audio funcytion
-
-// useEffect(()=>{
-//   const getAudio=()=>{
-  
-//     //gs://imprint2024.appspot.com
-//     //2023...2024
-//     //2023-12-24-id-english-audio
-//     //2023-12-27-id-id-english-audio
-  
-//     //2024-01-(17..20,23)-id-id-english
-//     //2024-03-(9.16,19..30)
-//     //2024-04-(2,3,9,19,21)
-//     //2024-4-9-anonymus-id-eng
-//     //2024-5-(6,10,17,18,19)
-//     //2024-5-6-anonymus-id
-//     // console.log("audioinfooo11111k==>>",audioinfo)
-  
-// console.log("checkingg-before",Array.isArray(audioinfo))
-// console.log("checkingg-before",Array.isArray(audiolink))
-  
-  
-  
-//     // gs://imprint2024.appspot.com/2024/04/09/Anonymous/XQyXKDi96VqvhnWHHREj/english/_Anonymous_XQyXKDi96VqvhnWHHREj_english_201_1712654331369.wav
-//   //gs://imprint2024.appspot.com/2024/03/10/PM0TzYnFNvdaNiRGmA9djuZSJmD3/PM0TzYnFNvdaNiRGmA9djuZSJmD3/english/_PM0TzYnFNvdaNiRGmA9djuZSJmD3_PM0TzYnFNvdaNiRGmA9djuZSJmD3_english_357_1710078589246.wav
-  
-//   // const storage=firebase.storage().ref()
-//   // const list=storage.child();
-  
-  
-  
-  
-  
-//   ///////for storage*********************************************7777777777777777755542324225
-//   const storage =getStorage();
-//   // audioId?.map((ele)=>(
-//   //   ref(storage,`2023/12/24/${ele.id}/${ele.id}/english`)
-  
-  
-//   // ))
-
-//   const d=ref(storage,`2023/12/24/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/LKOOCw6tw7TfBxspoBKTwtwVi5Q2/english`)
-  
-//   const f=  listAll(d).then((res)=>res.items.map((x)=>(
-//     {link:x.name}
-
-//   )
-    
-//     //   //improve
-//     // var t=audioinfo;
-    
-//     //   t.push(x);
-//     //   setaudioinfo(t)
-//   ))
-//   setaudioinfo(f);
-//   //  const h= audioinfo?.forEach((e,index)=>(
-//   //     // let y=audiolink;
-//   //     //  y.push({link:e.name});
-//   //     // setaudlink(y);
-//   //    {link:e.name}
-      
-  
-//   //  ))
-//   // setaudlink(h)
-//     console.log("audioinfo=====>>>",audioinfo);
-//     setaudlink(audioinfo)
-//     console.log("audiolink=====>>",audiolink);
-// console.log("checkingg-f",Array.isArray(audioinfo))
-// console.log("checkingg",Array.isArray(audiolink))   
-  
-  
-//   // console.log("audioinfo222==>>",audioinfo.valueOf())
-  
-//   console.log("TYPE OF AUDIO INFO",typeof audioinfo)
-//   // console.log("audioinfo test",audioinfo.values)
-//   }
-//   // const linklaga=()=>{
-//   // //////////////////////////////////////////////////////////////////
-//   //        // setchanged(false)
-//   // }
-//   getAudio();
-
-
-
-
-
-
-// },[filters])
-
-
-
-//FOR FETCHING LINKSSS------------------------------>>>>>>>>>>>>
-// useEffect(()=>{
-
-//   const getthat=()=>{
-//     // const storage = getStorage();
-   
-//     const h=audioAllData.length
-//     console.log("length of audioAllData",h)
-
-//     console.log("INSIDE GETHAT FUNCTION FOR")
-//     //in this array we store our ids that the query wants
-//     // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
-  
-//     const rough=[]
-//   ?.map( 
-//     (filename) => {
 //         listAll(ref( storage, `2023/12/24/${filename.id}/${filename.id}/english` ))
 //         .then( (url) => 
 //           // console.log( "Got download url: ", url.items );
@@ -1197,32 +498,625 @@ console.log("DISPLAY ===>> ID------------>",displayid);
                             
 //                                       ))
 //                                         );
-                            
-                        
-                    
-                
-            
-        
+//                                         // const d=JSON.stringify(rough)
+//                                         // console.log("Testing ",d)
+//                                         //          localStorage.setItem(filename.id,d)                    
+          
+//   }
+ 
+    
+  
+// );
+
+
+
+
+  }
+
+
+  saveinlocal();
+  
+
+},[])
+
+
+
+useEffect(()=>{
+  //SAVING ALL THE IDS FROM THE LOCAL STORAGE TO CONST DATA //
+   const getdata=async()=>{
+   const data=JSON.parse(localStorage.getItem("allId"))||[]//FETCHED ALL THE IDS SUCCESSFULLY
+  //  console.log("ALL THE IDS(DATA) ",data)
+
     
 
+   //QUERY
+  if(filters.moth){
 
+//     data.map(async(elem)=>{
+//       const f=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
+//       console.log("whats inside===>",f)     
+//         if(f != null){
+// g.push([elem.id])
+//       }
 
-
-
-
-
-
-
-//   });
+//     })
+//     console.log("ALL THE REQUIRED IDS=======>",g);
 
   
-// console.log("THE TEMPO ARRAY ======>",rough)
-// setaudioinfo(rough)
-// console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
-// }
+setaudioAllData([])
+
+
+    data.map(async(elem)=>{
+      const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
+      const audioj=await getDocs(audio)
+      const audiojj=audioj?.docs?.map((doc)=>({
+        id:doc.id
+
+      }))
+      // if(audiojj != null){
+      //   g.push(audiojj)
+
+      // }
+      if(audiojj.length>0){
+        setaudioAllData((prev)=>[...prev,audiojj])
+      }
+    })
+    // console.log("AUDIO ALL DATA-*****************************------------------>",audioAllData)
+  
+  }
+  function is2DObject(obj) {
+    for (const key in obj) {
+      if (Array.isArray(obj[key])) {
+        for (const item of obj[key]) {
+          if (Array.isArray(item)) {
+            return true; 
+          }
+        }
+      } else if (typeof obj[key] === 'object') {
+        return true; 
+      }
+    }
+    return false; 
+  }
+
+// else{
+
+//   const g=[];
+//     data.map(async(elem)=>{
+//       const audio=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert))
+//       const audioj=await getDocs(audio)
+//       const audiojj=audioj?.docs?.map((doc)=>({
+//         id:doc.id
+
+//       }))
+//       // if(audiojj != null){
+//       //   g.push(audiojj)
+
+//       // }
+//       setaudioAllData((prev)=>[...prev,audiojj])
+         
+      
+
+//     })
+//     console.log("FILTERED INFO OTHE THAN ANONYMUS(G)",audioAllData)
+    
+//       // setaudioAllData(g)
+    
+  
+
+
+
+//   // const q3=query(collection(db,`users/Anonymous/subjects`),
+
+//   // where('origin','==',filters.statet),
+//   // where('gender','==',filters.gendert),
+//   // )
+
+//   // const snapshot3=await getDocs(q3)
+//   // const data3=snapshot3.docs?.map((doc)=>({
+//   //   ...doc.data(),id:doc.id
+
+//   // }))
+//   // setaudioAllData((prev)=>[...prev,data3]);
+//   console.log("WE need Audio of the below INFOOO .. ",audioAllData);
+
+//   // console.log("FILTERED INFO OF ANONYMUS",data3)
+
+
+
+
+
+
+
+
+
+//  }
+
+
+
+
+
+  
+
+//
+
+  }
+// copying links to an array(NOT WORKING)
+  // const savelinks=()=>{
+  //   audioinfo?.map((e)=>(
+  //     console.log("audioinfo....",e.service.name)
+  
+  
+  //     ))
+  
+  // }
+  getdata();
+},[filters])
+
+
+
+//deriving ids of audio
+const  Test=()=>{
+
+}
+
+//SAVING ALL THE IDS
+useEffect(()=>{
+  const saveid=()=>{
+    const h=audioAllData.length
+  // console.log("length of audioAllData",h)
+  // setid(audioAllData[0])
+  // audioId?.map((e)=>{
+  //   console.log(e.id)
+  // })
+
+const g=[]
+setid([])
+for(let i=0;i<h;i++){
+// console.log("checking audioID====>",audioAllData[i],i)
+audioAllData[i]?.map((e)=>(
+// g.push(e.id)
+setid((prev)=>[...prev,e.id])
+))
+//data
+// console.log("Data---------->",);
+// data.map((e)=>(
+// ))
+}
+// console.log("G---------->",g);
+// setid(g)
+console.log("AUDIO ID------------>",audioId);
+
+// console.log("DISPLAY ===>> ID------------>",displayid);
+
+  }
+  saveid();
+// console.log("checkingg-audioID",Array.isArray(audioId))
+},[audioAllData])
+
+
+
+//&&&&&&&&&&&&&*****************************FOR FETCHING LINKSSS------------------------------>>>>>>>>>>>>
+useEffect(()=>{
+
+  const getthat=()=>{
+    
+    console.log("INSIDE GETHAT FUNCTION FOR")
+    //in this array we store our ids that the query wants
+    // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
+  
+    const rough=[]
+    setaudioinfo([])
+
+  audioId?.map( 
+    (filename) => {
+        listAll(ref( storage, `2023/12/24/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2023/12/27/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/01/17/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+            listAll(ref( storage, `2024/01/18/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+           ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/01/19/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/01/20/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/01/23/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/09/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/10/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/11/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/12/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/14/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/15/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/16/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/19/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/20/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/21/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/22/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/23/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/24/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/25/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/26/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/27/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+            listAll(ref( storage, `2024/03/28/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+            listAll(ref( storage, `2024/03/29/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/03/31/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/04/02/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/04/03/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/04/09/Anonymous/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/04/19/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/04/21/Anonymous/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/05/06/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/05/06/Anonymous/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+            listAll(ref( storage, `2024/05/10/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/05/17/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+            listAll(ref( storage, `2024/05/18/${filename}/${filename}/english` ))
+        .then( (url) => 
+          // console.log( "Got download url: ", url.items );
+          // rough.push(url.items)
+          url.items.map((x)=>(
+            setaudioinfo((prev)=>[...prev,x.name])
+
+          ))
+            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+            listAll(ref( storage, `2024/05/19/${filename}/${filename}/english` ))
+            .then( (url) => 
+              // console.log( "Got download url: ", url.items );
+              // rough.push(url.items)
+              url.items.map((x)=>(
+                setaudioinfo((prev)=>[...prev,x.name])
+    
+              ))
+                ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+                listAll(ref( storage, `2024/05/22/${filename}/${filename}/english` ))
+                .then( (url) => 
+                  // console.log( "Got download url: ", url.items );
+                  // rough.push(url.items)
+                  url.items.map((x)=>(
+                    setaudioinfo((prev)=>[...prev,x.name])
+        
+                  ))
+                    ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                    listAll(ref( storage, `2024/05/23/${filename}/${filename}/english` ))
+                    .then( (url) => 
+                      // console.log( "Got download url: ", url.items );
+                      // rough.push(url.items)
+                      url.items.map((x)=>(
+                        setaudioinfo((prev)=>[...prev,x.name])
+            
+                      ))
+                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                        listAll(ref( storage, `2024/05/24/${filename}/${filename}/english` ))
+                        .then( (url) => 
+                          // console.log( "Got download url: ", url.items );
+                          // rough.push(url.items)
+                          url.items.map((x)=>(
+                            setaudioinfo((prev)=>[...prev,x.name])
+                
+                          ))
+                            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                            listAll(ref( storage, `2024/05/25/${filename}/${filename}/english` ))
+                            .then( (url) => 
+                              // console.log( "Got download url: ", url.items );
+                              // rough.push(url.items)
+                              url.items.map((x)=>(
+                                setaudioinfo((prev)=>[...prev,x.name])
+                    
+                              ))
+                                ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                listAll(ref( storage, `2024/05/26/${filename}/${filename}/english` ))
+                                .then( (url) => 
+                                  // console.log( "Got download url: ", url.items );
+                                  // rough.push(url.items)
+                                  url.items.map((x)=>(
+                                    setaudioinfo((prev)=>[...prev,x.name])
+                        
+                                  ))
+                                    ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                    listAll(ref( storage, `2024/05/26/Anonymous/${filename}/${filename}/english` ))
+                                    .then( (url) => 
+                                      // console.log( "Got download url: ", url.items );
+                                      // rough.push(url.items)
+                                      url.items.map((x)=>(
+                                        setaudioinfo((prev)=>[...prev,x.name])
+                            
+                                      ))
+                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                    listAll(ref( storage, `2024/05/27/${filename}/${filename}/english` ))
+                                    .then( (url) => 
+                                      // console.log( "Got download url: ", url.items );
+                                      // rough.push(url.items)
+                                      url.items.map((x)=>(
+                                        setaudioinfo((prev)=>[...prev,x.name])
+                            
+                                      ))
+                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+  });
+
+
+console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
+}
  
-// getthat();
-// },[filters])
+getthat();
+},[submitted])
 
 
 
@@ -1269,6 +1163,7 @@ console.log("DISPLAY ===>> ID------------>",displayid);
 
           </div>
 
+
           <div>
           {/* <label htmlFor="gender">
                 Gender
@@ -1302,6 +1197,9 @@ console.log("DISPLAY ===>> ID------------>",displayid);
 
 
           </div>
+
+
+          
 <div>
 
             <input type="text" name="moth" id="moth" value={filters.moth} onChange={(events)=>handle(events)} 
@@ -1309,9 +1207,17 @@ console.log("DISPLAY ===>> ID------------>",displayid);
 
 </div>
   </div>
+
+
  <div className='align-middle text-center mx-auto w-[full] mt-32'>
-    
-<div className='align-middle text-center mx-auto'>
+    <div>
+      <button onClick={()=>(setsubmit((prev)=>(!prev)))}
+      className="  rounded-3xl  text-2xl border-4  border-purple-500 bg-violet-200  p-2">
+        GET AUDIO <FaArrowRight />
+      </button>
+    </div>
+
+   <div className='align-middle text-center mx-auto'>
   OUTPUT Area
             {
               
@@ -1323,16 +1229,7 @@ console.log("DISPLAY ===>> ID------------>",displayid);
             ))
             }
   
-      
-        
-  
 </div>
-
-{/* <div>
-  {
-    const g=audioinfo.length
-  }
-</div> */}
 
 <div>
   
@@ -1346,7 +1243,7 @@ console.log("DISPLAY ===>> ID------------>",displayid);
 
 audioinfo?.map((ab,i)=>(
       <h1 key={i}><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">
-   audio-{i} - {ab.link} 
+   audio-{i} - {ab} 
         </a>
         
         </h1>
