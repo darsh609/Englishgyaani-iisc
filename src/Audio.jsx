@@ -1,18 +1,18 @@
 import React from 'react'
 
 export const Audio = (props) => {
-    let audiolink=props.audiolink
+    let audioinfo=props.audioinfo
   return (
     <div>
         <div>
         Audio pagee
-    {
+    {/* {
   
   
-    //   audiolink?.map((ab)=>(
-    //     <h1><audio src={ab.link}>looooooo</audio></h1>
-    //   ))
-    }
+      audioinfo?.map((ab)=>(
+        <h1><audio src={ab}>looooooo</audio></h1>
+     ))
+    } */}
   </div>
   
   </div>
