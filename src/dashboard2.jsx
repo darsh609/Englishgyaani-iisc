@@ -6,6 +6,7 @@ import state from "./data/state.json"
 import gender from "./data/gender.json"
 import { Audio } from './Audio';
 import { FaArrowRight } from "react-icons/fa";
+import { Audio2 } from './Audio2';
 // import firebase from 'firebase/app'
 // import * as admin from 'firebase-admin'
 //import { initializeApp } from 'firebase-admin/app';
@@ -1344,8 +1345,8 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 
     <div className='mx-auto  w-[1200px] flex-col gap-7' >
       
-      <div className='text-4xl text-center mb-32 text-indigo-700 '>
-        AUDIO RECORDING DASHBOARD
+      <div className='text-4xl text-center mb-32 text-purple-900  font-extrabold '>
+        AUDIO FETCHING DASHBOARD
         
 
       </div>
@@ -1363,7 +1364,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
               
               required
 
-              className="  rounded-3xl  border-4  border-purple-600  p-2"
+              className="  rounded-3xl  border-4  border-purple-700  p-2"
 
             >
               <option disabled={true} value="">
@@ -1389,7 +1390,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 
             </label>  */}
             <select
-              className="  rounded-3xl  border-4  border-purple-600 p-2"
+              className="  rounded-3xl  border-4  border-purple-700 p-2"
               type="text"
               name="gendert"
               id="gendert"
@@ -1421,20 +1422,29 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 <div>
 
             <input type="text" name="moth" id="moth" value={filters.moth} onChange={(events)=>handle(events)} 
-            placeholder='Your Mother-Tounge'  className="  rounded-3xl  border-4  border-purple-600 p-2"/>
+            placeholder='Your Mother-Tounge'  className="  rounded-3xl  border-4  border-purple-700 p-2"/>
 
 </div>
   </div>
+  <div className='  text-2xl  mt-24'>{
+  submitted?
+  <Audio2 audioinfo={audioinfo} />:<h6>Enter The Above Details</h6>
+  }
+  
+
+</div>
 
 
- <div className='align-middle text-center mx-auto  mt-32'>
+ <div className='align-middle text-center mx-auto mt-10'>
     
       <button onClick={()=>(setsubmit(true))}
-      className={`flex gap-3 mx-auto  rounded-3xl  text-2xl border-4  border-purple-500 ${submitted ? "bg-violet-200 opacity-0" : "bg-violet-500" }  p-2`}>
-        <div>
+      className={`flex gap-3 mx-auto  rounded-3xl  text-2xl border-4  border-purple-700 ${submitted ? "bg-violet-200 opacity-0" : " bg-purple-200" }  p-2`}>
+        <div className=' font-semibold'>
         GET AUDIO
         </div>
+        
         <div className=' mt-1'>
+
         <FaArrowRight />
 
         </div>
@@ -1455,9 +1465,6 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
   
 </div> */}
 
-
-
-
 {/* <div>
   {
     audioId?.map((ab,i)=>(
@@ -1469,14 +1476,10 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
   LINKS
 </div> */}
 
-<div>{
-  submitted?
-  <Audio audioinfo={audioinfo} />:<h3>Enter the above details</h3>
-  }
   
 
-</div>
-         </div>         
+         </div>    
+            
         
     </div>
   )

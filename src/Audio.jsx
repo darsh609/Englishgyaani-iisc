@@ -8,7 +8,7 @@ export const Audio = (props) => {
       setloading(true)
       setTimeout(()=>{
         setloading(false)
-      },10000)
+      },1000)
       
     },[])
 
@@ -22,7 +22,7 @@ export const Audio = (props) => {
       </audio> */}
       <br/>
     <div className='mx-auto '>
-      {loading ?<div className='flex-col'><RingLoader color="#9B59B6 "  size={200} className='mx-auto'/> <div>Please wait...
+      {loading ?<div className='flex-col'><RingLoader color="#9B59B6 "  size={200} className='mx-auto'/> <div>Please wait 
         </div>
       </div>
       :
