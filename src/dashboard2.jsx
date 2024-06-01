@@ -57,6 +57,7 @@ const[displayid,setdisplay]=useState([])
 const[audiolink,setaudlink]=useState([])
 const[changed,setchanged]=useState(false);
 const[submitted,setsubmit]=useState(false);
+
 const db=getFirestore()
 const storage = getStorage();
 
@@ -642,15 +643,7 @@ setaudioAllData([])
 //
 
   }
-// copying links to an array(NOT WORKING)
-  // const savelinks=()=>{
-  //   audioinfo?.map((e)=>(
-  //     console.log("audioinfo....",e.service.name)
-  
-  
-  //     ))
-  
-  // }
+
   getdata();
 },[filters])
 
@@ -663,7 +656,9 @@ const  Test=()=>{
 
 //SAVING ALL THE IDS
 useEffect(()=>{
+
   const saveid=()=>{
+    
     setid([])
     const h=audioAllData.length
 
@@ -693,14 +688,14 @@ console.log("AUDIO ID------------>",audioId);
 
 //&&&&&&&&&&&&&*****************************FOR FETCHING LINKSSS------------------------------>>>>>>>>>>>>
 useEffect(()=>{
-
+  
   const getthat=()=>{
     
     
     //in this array we store our ids that the query wants
     // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
   
-  
+    
     setaudioinfo([])
 
   audioId?.map( 
@@ -1333,6 +1328,7 @@ useEffect(()=>{
 
 
 console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
+
 }
  if(submitted && audioId.length>0){
   getthat();
@@ -1445,8 +1441,8 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
                </button>
 
 
-   <div className='text-center mx-auto '>
-  OUTPUT Area
+   {/* <div className='text-center mx-auto '>
+
             {
               
             audioId?.map((student, index) => (
@@ -1457,47 +1453,9 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
             ))
             }
   
-</div>
-
-<div>
-  
-  hloo
-  {
-    // <h1>{audioinfo}</h1>
-
-//PROBLEM HERE IS THAT SINCE A PROMISE STATEMENT IS USED TO SAVE THE FILES IN AUDIO INFO 
-//I M UNABLE TO GET THE DATA INSIDE IT
+</div> */}
 
 
-audioinfo?.map((ab,i)=>(
-      <div key={i}><a href={`${ab}`} target="_blank">
-   {i}-{ab} 
-        </a>
-        
-        </div>
-        //https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f
-    ))
-
-
-
-
-//TRYING USING PROMISE BUT UNSUCCESFUL :(
-// Promise.resolve(audioinfo).then((y)=>{
-//   y.map((ab)=>(
-// <h1 ><a href={`https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_${ab.link}?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f`} target="_blank">{ab.link}       </a></h1>
-//   ))
-
-// })
-
-// Object.keys(audioinfo).map((key)=>{
-//   <h3>{key}:{audioinfo.key.link}</h3>
-// })
-
-
-
-  }
-  
-</div>
 
 
 {/* <div>
@@ -1511,8 +1469,11 @@ audioinfo?.map((ab,i)=>(
   LINKS
 </div> */}
 
-<div>
-  <Audio audioinfo={audioinfo}/>
+<div>{
+  submitted?
+  <Audio audioinfo={audioinfo} />:<h3>Enter the above details</h3>
+  }
+  
 
 </div>
          </div>         
