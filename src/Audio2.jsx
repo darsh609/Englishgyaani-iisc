@@ -2,22 +2,26 @@
 import {Howl} from "howler"
 import 'react-h5-audio-player/lib/styles.css';
 import "./App.css"
-
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa";
 import React, { useEffect, useState } from 'react'
 import RingLoader from 'react-spinners/RingLoader'
 import AudioPlayer from 'react-h5-audio-player';
+
 import "./styles.css"
 
 
 export const Audio2 = (props) => {
-    let audioinfo=props.audioinfo
+  const navigate=useNavigate();
+    const audioinfo=props.audioinfo
+    
     
     const [loading,setloading]=useState(false)
     useEffect(()=>{
       setloading(true)
       setTimeout(()=>{
         setloading(false)
-      },3000)
+      },8000)
       
     },[])
    const soundPlay=(src)=>{
@@ -33,9 +37,56 @@ export const Audio2 = (props) => {
         { loading ?<div className='flex-col '><RingLoader color="#9B59B6 "  size={200} className='mx-auto'/> <div>Please wait 
         </div></div>: 
         <div className="font-bold">
-        NUMBER OF AUDIOS-
-          {audioinfo.length}
+           <div className='align-middle text-center mx-auto mt-10'>
+    
+      <button onClick={()=>navigate("/filters")}
+      className={`flex gap-3 mx-auto  rounded-3xl mb-10 text-2xl border-4  border-purple-700 bg-purple-400 p-2`}>
+        <div className=' font-semibold'>
+        GET Audios By Word/Sentences
+        </div>
+        
+        <div className=' mt-1'>
+
+        <FaArrowRight />
+
+        </div>
+               </button>
+
+
+   {/* <div className='text-center mx-auto '>
+
+            {
+              
+            audioId?.map((student, index) => (
+            
+                
+                <div className='border  border-amber-500  text-3xl' key={index}>{student}</div>
+              
+            ))
+            }
+  
+</div> */}
+
+{/* <div>
+  {
+    audioId?.map((ab,i)=>(
+      <h1 key={i}>{ab.id}</h1>
+    ))
+  }
+</div> */}
+{/* <div className=' text-teal-500'>
+  LINKS
+</div> */}
+
+  
+
+         </div>    
+         
+
+        NUMBER OF AUDIOS- 
+           {audioinfo?.length} 
           <div className="w-full flex flex-wrap  gap-14   justify-evenly   mt-24 ">
+            
             {
                 audioinfo?.map((j,i)=>(
                     <div key={i}>
@@ -51,7 +102,7 @@ export const Audio2 = (props) => {
             className=' mt-11 mb-'
           />  */}
           <div className=" mx-auto flex-col w-[470px] mt-2  h-52 mb-20   border-purple-700     rounded-full border-[9px]">
-          AUDIO-{i}
+          AUDIO-{i+1}
           <div className=" mt-20 mb-4">
           <button key={i} onClick={()=>(soundPlay(`${j}`))} class="btn  mb-8">
                     PLAY

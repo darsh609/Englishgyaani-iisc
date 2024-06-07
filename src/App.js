@@ -7,7 +7,9 @@ import React from "react";
 import Signin from "./signin";
 import Dashboard from "./dashboard";
 import Dashboard2 from "./dashboard2";
-
+import {Route,Routes} from "react-router-dom"
+import { Filters } from "./Filters";
+import { useState } from "react";
 // const db=getDatabase(database);
 
 
@@ -32,21 +34,30 @@ function App() {
 
   //   })
   // }
+  const[audioinfo,setaudioinfo]=useState([]);
   return (
     <div className="  h-screen overflow-x-hidden bg-purple-300   bg-cover">
     
 
 
        <div className="text-4xl text-center ">
+       <Routes>
+       <Route path="/" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+          <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+        </Routes>
+
+
+
         
 
-        <Dashboard2/>
+       
+        
 
        </div>
 
 
-      
 
+      
 
  
       
