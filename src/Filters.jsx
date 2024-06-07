@@ -261,7 +261,7 @@ console.log(".........",numbers)
             // other props here
             className=' mt-11 mb-'
           />  */}
-          <div className=" mx-auto flex-col w-[900px] mt-2  h-80 mb-20   border-purple-700     rounded-full border-[9px]">
+          <div className=" mx-auto flex-col w-[1100px] mt-2  h-80 mb-20   border-purple-700     rounded-full border-[9px]">
           {filter}
           <div className="  mt-44 mb-4">
           <button key={i} onClick={()=>(soundPlay(`${j}`))} class="btn  mb-8">
