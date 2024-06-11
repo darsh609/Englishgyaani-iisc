@@ -1,7 +1,9 @@
 import  {useState} from "react";
 import {getAuth,createUserWithEmailAndPassword} from "firebase/auth"
 import {database} from "./firebase";
+ 
 // const auth=getAuth(database);
+
 
 
 const Login=()=>{

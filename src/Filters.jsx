@@ -55,7 +55,8 @@ export const Filters = (props) => {
         setsubmit(false)
 
         setfilters(searchTerm)
-        setnum(nok)        
+        setnum(nok)    
+        console.log("idsss----->",nok)    
         // const g= data.find(el=>el.words==filter)
         // if(g==null){
 
@@ -63,7 +64,7 @@ export const Filters = (props) => {
         //     setnum(g.ids)
         //     console.log("numbers--->",numbers)
         // }
-console.log("this is the word------>>>",searchTerm)
+// console.log("this is the word------>>>",searchTerm)
 console.log(".........",numbers)
     }
     useEffect(()=>{

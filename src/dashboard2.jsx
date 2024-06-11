@@ -695,6 +695,7 @@ useEffect(()=>{
 
   audioId?.map( 
     (filename) => {
+
         listAll(ref( storage, `2023/12/24/${filename}/${filename}/english` ))
         .then( (url) => 
           // console.log( "Got download url: ", url.items );
@@ -709,6 +710,10 @@ useEffect(()=>{
 
     })
             ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+
+
+
             listAll(ref( storage, `2023/12/27/${filename}/${filename}/english` ))
             .then( (url) => 
               // console.log( "Got download url: ", url.items );
@@ -1450,20 +1455,281 @@ useEffect(()=>{
                                     
                                         })
                                                 ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
-                                                listAll(ref( storage, `2024/06/03/${filename}/${filename}/english` ))
-                                                .then( (url) => 
-                                                  // console.log( "Got download url: ", url.items );
-                                                  // rough.push(url.items)
-                                                  url.items.forEach((x)=>{
-                                                    getDownloadURL(x).then((fetch)=>{
-                                                      setaudioinfo((prev)=>[...prev,fetch])
+
+
+
+                                                for(let i=1;i<=31;i++){
+                                                 
+
+                                                  if(i<10){
+                                                    i=i.toString()
+
+                                                    listAll(ref( storage, `2024/06/${`0`+i}/${filename}/${filename}/english` ))
+                                                    .then( (url) => 
+                                                      // console.log( "Got download url: ", url.items );
+                                                      // rough.push(url.items)
+                                                      url.items.forEach((x)=>{
+                                                        getDownloadURL(x).then((fetch)=>{
+                                                          setaudioinfo((prev)=>[...prev,fetch])
+                                            
+                                                          
+                                                        })                
+                                            
+                                                })
+                                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                      
+                                                        listAll(ref( storage, `2024/06/${`0`+i}/Anonymous/${filename}/english` ))
+                                                        .then( (url) => 
+                                                          // console.log( "Got download url: ", url.items );
+                                                          // rough.push(url.items)
+                                                          url.items.forEach((x)=>{
+                                                            getDownloadURL(x).then((fetch)=>{
+                                                              setaudioinfo((prev)=>[...prev,fetch])
+                                                
+                                                              
+                                                            })
+                                                            
+                                                
+                                                    })
+                                                            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+  
+
+                                                  }
+                                                  else{
+
+                                                    i=i.toString()
+
+                                                    listAll(ref( storage, `2024/06/${i}/${filename}/${filename}/english` ))
+                                                    .then( (url) => 
+                                                      // console.log( "Got download url: ", url.items );
+                                                      // rough.push(url.items)
+                                                      url.items.forEach((x)=>{
+                                                        getDownloadURL(x).then((fetch)=>{
+                                                          setaudioinfo((prev)=>[...prev,fetch])
+                                            
+                                                          
+                                                        })                
+                                            
+                                                })
+                                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                      
+                                                        listAll(ref( storage, `2024/06/${i}/Anonymous/${filename}/english` ))
+                                                        .then( (url) => 
+                                                          // console.log( "Got download url: ", url.items );
+                                                          // rough.push(url.items)
+                                                          url.items.forEach((x)=>{
+                                                            getDownloadURL(x).then((fetch)=>{
+                                                              setaudioinfo((prev)=>[...prev,fetch])
+                                                
+                                                              
+                                                            })
+                                                            
+                                                
+                                                    })
+                                                            ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+  
+                                                  }
+                                                 
+
+                                                          
+                                                        }
+
+                                                          for(let i=7;i<=12;i++){
+                                                            i=i.toString()
+                                                            if(i<10){
+                                                              //////
+                                                              
+
+                                                            for(let j=1;j<=31;j++){
+                                                              j=j.toString()
+                                                              if(j<10){
+                                                                listAll(ref( storage, `2024/${`0`+i}/${`0`+j}/${filename}/${filename}/english` ))
+                                                                .then( (url) => 
+                                                                  // console.log( "Got download url: ", url.items );
+                                                                  // rough.push(url.items)
+                                                                  url.items.forEach((x)=>{
+                                                                    getDownloadURL(x).then((fetch)=>{
+                                                                      setaudioinfo((prev)=>[...prev,fetch])
+                                                        
+                                                                      
+                                                                    })                
+                                                        
+                                                            })
+                                                                    ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                                  
+                                                                    listAll(ref( storage, `2024/${`0`+i}/${`0`+j}/Anonymous/${filename}/english` ))
+                                                                    .then( (url) => 
+                                                                      // console.log( "Got download url: ", url.items );
+                                                                      // rough.push(url.items)
+                                                                      url.items.forEach((x)=>{
+                                                                        getDownloadURL(x).then((fetch)=>{
+                                                                          setaudioinfo((prev)=>[...prev,fetch])
+                                                            
+                                                                          
+                                                                        })
+                                                                        
+                                                            
+                                                                })
+                                                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+              
+
+                                                              }
+                                                              else{
+                                                                listAll(ref( storage, `2024/${`0`+i}/${j}/${filename}/${filename}/english` ))
+                                                                .then( (url) => 
+                                                                  // console.log( "Got download url: ", url.items );
+                                                                  // rough.push(url.items)
+                                                                  url.items.forEach((x)=>{
+                                                                    getDownloadURL(x).then((fetch)=>{
+                                                                      setaudioinfo((prev)=>[...prev,fetch])
+                                                        
+                                                                      
+                                                                    })                
+                                                        
+                                                            })
+                                                                    ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                                  
+                                                                    listAll(ref( storage, `2024/${`0`+i}/${j}/Anonymous/${filename}/english` ))
+                                                                    .then( (url) => 
+                                                                      // console.log( "Got download url: ", url.items );
+                                                                      // rough.push(url.items)
+                                                                      url.items.forEach((x)=>{
+                                                                        getDownloadURL(x).then((fetch)=>{
+                                                                          setaudioinfo((prev)=>[...prev,fetch])
+                                                            
+                                                                          
+                                                                        })
+                                                                        
+                                                            
+                                                                })
+                                                                        ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+
+                                                              }
+
+
+                                                             
+
+
+                                                            }
+
+                                                            
+                                                            }
+
+
+                                                            else{
+                                                              /////////////////////////
+                                                              for(let j=1;j<=31;j++){
+                                                                j=j.toString()
+                                                                if(j<10){
+                                                                  listAll(ref( storage, `2024/${i}/${`0`+j}/${filename}/${filename}/english` ))
+                                                                  .then( (url) => 
+                                                                    // console.log( "Got download url: ", url.items );
+                                                                    // rough.push(url.items)
+                                                                    url.items.forEach((x)=>{
+                                                                      getDownloadURL(x).then((fetch)=>{
+                                                                        setaudioinfo((prev)=>[...prev,fetch])
+                                                          
+                                                                        
+                                                                      })                
+                                                          
+                                                              })
+                                                                      ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                                    
+                                                                      listAll(ref( storage, `2024/${i}/${`0`+j}/Anonymous/${filename}/english` ))
+                                                                      .then( (url) => 
+                                                                        // console.log( "Got download url: ", url.items );
+                                                                        // rough.push(url.items)
+                                                                        url.items.forEach((x)=>{
+                                                                          getDownloadURL(x).then((fetch)=>{
+                                                                            setaudioinfo((prev)=>[...prev,fetch])
+                                                              
+                                                                            
+                                                                          })
+                                                                          
+                                                              
+                                                                  })
+                                                                          ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                
+  
+                                                                }
+                                                                else{
+                                                                  listAll(ref( storage, `2024/${i}/${j}/${filename}/${filename}/english` ))
+                                                                  .then( (url) => 
+                                                                    // console.log( "Got download url: ", url.items );
+                                                                    // rough.push(url.items)
+                                                                    url.items.forEach((x)=>{
+                                                                      getDownloadURL(x).then((fetch)=>{
+                                                                        setaudioinfo((prev)=>[...prev,fetch])
+                                                          
+                                                                        
+                                                                      })                
+                                                          
+                                                              })
+                                                                      ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                                                    
+                                                                      listAll(ref( storage, `2024/${i}/${j}/Anonymous/${filename}/english` ))
+                                                                      .then( (url) => 
+                                                                        // console.log( "Got download url: ", url.items );
+                                                                        // rough.push(url.items)
+                                                                        url.items.forEach((x)=>{
+                                                                          getDownloadURL(x).then((fetch)=>{
+                                                                            setaudioinfo((prev)=>[...prev,fetch])
+                                                              
+                                                                            
+                                                                          })
+                                                                          
+                                                              
+                                                                  })
+                                                                          ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+  
+                                                                }
+  
+  
+                                                               
+  
+  
+                                                              }
+                                                              
+                                                              
+                                                            }
+
+                                                          }
+
+
+
+
+
+
+                                                
+                                               
+                                            //         listAll(ref( storage, `2024/06/04/${filename}/${filename}/english` ))
+                                            //     .then( (url) => 
+                                            //       // console.log( "Got download url: ", url.items );
+                                            //       // rough.push(url.items)
+                                            //       url.items.forEach((x)=>{
+                                            //         getDownloadURL(x).then((fetch)=>{
+                                            //           setaudioinfo((prev)=>[...prev,fetch])
                                         
                                                       
-                                                    })
+                                            //         })
                                                     
                                         
-                                            })
-                                                    ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                            // })
+                                            //         ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
+                                            //         listAll(ref( storage, `2024/06/05/${filename}/${filename}/english` ))
+                                            //     .then( (url) => 
+                                            //       // console.log( "Got download url: ", url.items );
+                                            //       // rough.push(url.items)
+                                            //       url.items.forEach((x)=>{
+                                            //         getDownloadURL(x).then((fetch)=>{
+                                            //           setaudioinfo((prev)=>[...prev,fetch])
+                                        
+                                                      
+                                            //         })
+                                                    
+                                        
+                                            // })
+                                            //         ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
                     
                 
             
@@ -1593,8 +1859,8 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
         </div>
                </button>
 
-
-   {/* <div className='text-center mx-auto '>
+{/* 
+   <div className='text-center mx-auto '>
 
             {
               

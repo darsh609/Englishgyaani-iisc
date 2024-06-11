@@ -10,6 +10,7 @@ import Dashboard2 from "./dashboard2";
 import {Route,Routes} from "react-router-dom"
 import { Filters } from "./Filters";
 import { useState } from "react";
+import India from "./india";
 // const db=getDatabase(database);
 
 
@@ -44,6 +45,7 @@ function App() {
        <Routes>
        <Route path="/" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
           <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+          <Route path="india" element={<India/>}/>
         </Routes>
 
 

@@ -21,7 +21,7 @@ export const Audio2 = (props) => {
       setloading(true)
       setTimeout(()=>{
         setloading(false)
-      },8000)
+      },3000)
       
     },[])
    const soundPlay=(src)=>{
