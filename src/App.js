@@ -11,6 +11,7 @@ import {Route,Routes} from "react-router-dom"
 import { Filters } from "./Filters";
 import { useState } from "react";
 import India from "./india";
+import { Collect } from "./Collect";
 // const db=getDatabase(database);
 
 
@@ -43,9 +44,10 @@ function App() {
 
        <div className="text-4xl text-center ">
        <Routes>
-       <Route path="/" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
-          <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+       {/* <Route path="/" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+          <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/> */}
           <Route path="india" element={<India/>}/>
+          <Route path="collect" element={<Collect/>}/>
         </Routes>
 
 
