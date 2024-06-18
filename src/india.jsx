@@ -27,11 +27,20 @@ import {assets, colorscale, raajya} from "./State"
 
             ]
         }}
+        onRegionSelected={ function(){
+            // if (window.localStorage) {
+            //   window.localStorage.setItem(
+            //     'jvectormap-selected-regions',
+            //     JSON.stringify(map.getSelectedRegions())
+            //   );
+            // }
+            
+          }}
         onRegionTipShow={function reginalTip(event,label,code){
             return label.html(`
                 <div style="background-color:black; border-radius:6px; min-height:60px; width:400px">
                 <b>
-                ${label.html()}
+                (${label.html()})
                 </b>
                 <p>
                 Male-${assets[code][0]}
@@ -44,6 +53,17 @@ import {assets, colorscale, raajya} from "./State"
 
                 `)
         }}
+        onViewportChange={
+            function onview(event,scale){
+                // return label.html(`
+                //     <div>
+                //     (${label.html()})
+                //     </div>
+                //     `)
+                
+
+            }
+        }
         
         
         />

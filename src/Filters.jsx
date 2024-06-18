@@ -5,6 +5,7 @@ import { Audio2 } from './Audio2';
 import {Howl} from "howler"
 import 'react-h5-audio-player/lib/styles.css';
 import "./App.css"
+import { useLocation } from 'react-router-dom';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import React, { useEffect, useState } from 'react'
@@ -13,23 +14,43 @@ import { GrSearch } from "react-icons/gr";
 import { set } from 'react-hook-form';
 export const Filters = (props) => {
     const audioinfo=props.audioinfo
+    const malelinks=props.malelinks
+    const femalelinks=props.femalelinks
+    const [malestimuli,setmalestimuli]=useState([])
+    const[femalestimuli,setfemalestimuli]=useState([])
+
+
+    // const femalestimuli=props.femalestimuli
+    // const malestimuli=props.malestimuli
+    // const setmalestimuli=props.setmalestimuli
+    // const setfemalestimuli=props.setfemalestimuli
+
     const [filteredinfo,setfilterinfo]=useState([])
     const[testing,settest]=useState([])
     const [filter,setfilters]=useState('')
-    const [numbers,setnum]=useState('')
+   const [numbers,setnum]=useState('')
+    const numberso=props.numbers
+    const setnumo=props.setnumbers
     const [submit,setsubmit]=useState(false)
+    // const [malestimuli,setmalestimuli]=useState([])
+    // const[femalestimuli,setfemalestimuli]=useState([])
     const navigate=useNavigate();
 
     
     
     const [loading,setloading]=useState(false)
-    useEffect(()=>{
-      setloading(true)
-      setTimeout(()=>{
-        setloading(false)
-      },4000)
+    // useEffect(()=>{
+    //   setloading(false)
+    //   setTimeout(()=>{
+    //     setloading(false)
+    //   },4000)
       
-    },[])
+    // },[])
+//     useEffect(()=>{
+// setnumo(numbers)
+//     },[numbers])
+
+
    const soundPlay=(src)=>{
         const sound=new Howl({
             src,
@@ -39,7 +60,7 @@ export const Filters = (props) => {
     }
 
 
-
+const g=0
 
 
 
@@ -55,7 +76,11 @@ export const Filters = (props) => {
         setsubmit(false)
 
         setfilters(searchTerm)
-        setnum(nok)    
+        setnum(nok)   
+        
+      
+
+ 
         console.log("idsss----->",nok)    
         // const g= data.find(el=>el.words==filter)
         // if(g==null){
@@ -68,83 +93,76 @@ export const Filters = (props) => {
 console.log(".........",numbers)
     }
     useEffect(()=>{
+      
         const fetch=()=>{
-            console.log("ALLLLLLLLLLLL===========",audioinfo)
-            setfilterinfo([])
-            audioinfo?.map((ele,i)=>{
+          setfemalestimuli([])
+             console.log("ALLLLLLL==========",femalestimuli)
+          
+          femalelinks?.map((ele,i)=>{
                 const j=ele
                 // console.log("----->",ele)
                 if(ele.split('_')[4]==numbers){
-                    setfilterinfo((prev)=>[...prev,ele])
+                    setfemalestimuli((prev)=>[...prev,ele])
                     
         
                  }
+                 else{
+
+                 }
         
                })
-               settest(filteredinfo)
-               
-               console.log("filteredaudio---->",filteredinfo)
+              
         }
 
         fetch();
     },[numbers])
 
+
+
+
+
+    // useEffect(()=>{
+    //     settest(filteredinfo)
+
+    // },[filteredinfo])
     useEffect(()=>{
-        settest(filteredinfo)
+      const fetch=()=>{
+          console.log("ALLLLLLL==========",malelinks)
+          setmalestimuli([])
+                    malelinks?.map((ele,i)=>{
+              const j=ele
+              // console.log("----->",ele)
+              if(ele.split('_')[4]==numbers){
+                
+                  setmalestimuli((prev)=>[...prev,ele])
+                  
+      
+               }
+      
+             })
 
-    },[filteredinfo])
+            //  settest(filteredinfo)
+             
+            //  console.log("filteredaudio---->",filteredinfo)
+      }
 
-
-// useEffect(()=>{ 
-//     const fetchaudio=()=>{
-//        const g=data.find((e)=>e.words==filter)
-//         console.log(g.ids)
-//         const f=g
-//         if(g==null){
-//          // alert("AUDIO FILE DOESN'T CONTAIN FOLLOWING WORD ")
-//         }
-//         else{ 
-//         setfilterinfo([])
-//         setnum(f.ids)
-//        audioinfo?.map((ele,i)=>{
-//          const j=ele
-//          if(ele.split('_')[4]==numbers){
-//              setfilterinfo((prev)=>[...prev,ele])
-//              console.log("filteredaudio---->",filteredinfo)
- 
-//          }
- 
-//         })
-//  console.log("filteredaudi#################o---->",filteredinfo)
-//  //     const v="https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2023%2F12%2F24%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2FLKOOCw6tw7TfBxspoBKTwtwVi5Q2%2Fenglish%2F_LKOOCw6tw7TfBxspoBKTwtwVi5Q2_LKOOCw6tw7TfBxspoBKTwtwVi5Q2_english_2_1703419697222.wav?alt=media&token=861b2bea-0b1f-45a5-ad77-26f0909b862f"
-//  //    const d= v.split('_')[4]
- 
- 
-//         }
-        
-
-//      }
+      fetch();
+  },[numbers])
 
 
-// fetchaudio();
-// },[submit])
 
-     
- 
- 
 
-    console.log("oooooooooooooo--------------->",filteredinfo)
   return (
-    <div className='w-[1100px]'>
-        <div className='text-4xl text-center mb-32 ml-96 text-purple-900  font-extrabold '>
-        FILTERS
+    <div className='w-[1100px] mt-60 mr-40'>
+        <div className='text-4xl text-center mb-32 ml-96 text-neutral-700  font-extrabold '>
+        
         </div>
         <div className='mx-auto '>
         <div className='flex gap-1  block'>
 
 <div className=''>
-    <label  htmlFor="text" className=" text-xl    mr-24  font-bold">Select words from dropdown </label>
-<input type="text" className="filter ml-[400px] rounded-3xl" value={filter} onChange={handler} name="fill" id="fill" placeholder='Enter The Word/Sentence'> 
+    <label  htmlFor="text" className=" text-xl    mr-8  font-bold"></label>
+<input type="text" className="filter ml-[500px] rounded-3xl bg-slate-600  border-black border-4 " value={filter} onChange={handler} name="fill" id="fill" placeholder='Select Stimuli from dropdown'> 
 </input>
 
 </div>
@@ -160,14 +178,14 @@ console.log(".........",numbers)
 
         </div>
            
-        <div className='dropdown rounded-3xl  ml-[400px]' >
+        <div className='dropdown  mr-40 rounded-3xl  ml-[640px]' >
                 {
                     data.filter((item)=>{const searchTerm=filter.toLowerCase()
                         const ans=item.words.toLowerCase()
                         return( searchTerm && ans.startsWith(searchTerm)&&ans!==searchTerm);
                     }
-                ).slice(0,15).map((item,i)=>(
-                        <div onClick={()=>onsearch(item.words,item.ids)} className='dropdown-row px-10'
+                ).slice(0,30).map((item,i)=>(
+                        <div onClick={()=>onsearch(item.words,item.ids)} className=' text-white dropdown-row px-10'
                         key={i}>
                             {item.words}
                             </div>
@@ -194,58 +212,87 @@ console.log(".........",numbers)
 
 
 
-        <div className="w-full mx-auto flex-col ml-56 ">
+        <div className="w-full  flex-col ml-[400px]  mt-32 mx-auto ">
         {/* { loading ?<div className='flex-col '><RingLoader color="#9B59B6 "  size={200} className='mx-auto'/> <div>Please wait 
         </div></div>:  */}
         <div className="font-bold">
            <div className='align-middle text-center mx-auto mt-10'>
-    
+{/*     
       <button onClick={()=>navigate("/")}
-      className={`flex gap-3 mx-auto  rounded-3xl mb-10 text-2xl border-4  border-purple-700 bg-purple-400 p-2`}>
-        <div className=' font-semibold'>
+      className={`flex gap-3 mx-auto  rounded-3xl mb-10 text-2xl border-4  border-neutral-600 bg-meutral-400 p-2`}>
+         <div className=' font-semibold'>
         GO BACK TO DASHBOARD
-        </div>
+        </div> 
         
         <div className=' mt-1'>
 
-        <FaArrowRight />
+        <FaArrowRight /> 
 
         </div>
-               </button>
+               </button> */}
 
 
-   {/* <div className='text-center mx-auto '>
+            <div>
+            <table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
+  <tr className=" border-b-8 border-black">
+    <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
+    <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">STIMULI COUNT</th>
+    {/* <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th> */}
+    <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th>
+  </tr>
+  <tr
+    className=""
+    tabIndex="0"
+  >
+    <td className=" border-black border-4 px-16 py-4">Male</td>
+    <td className=" border-black border-4 px-16 py-4">
+      {malestimuli.length}
+      </td>
+    {/* <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
+      <br/>
+      <div className=" text-xs">
+      This May Take A While
+      </div>
+       
+    </div></div>:<div></div>}</td> */}
+    <td className=" border-black border-4 px-16 py-4"><Link state={numbers}   to='/Stimulimale' className=" underline"> Link</Link></td>
+    {/* <td className={` border-black border-4 px-16 py-4  ${maleaudio?"opacity-20 text-2xl":""}`}><button onClick={()=>navigate("/Male")} >Link</button></td> */}
+  </tr>
+  <tr
+   className=""
+    tabIndex="0"
+  >
+    <td className=" border-black border-4 px-8 py-4">Female</td>
+    <td className=" border-black border-4 px-8 py-4">{femalestimuli.length}</td>
+    {/* <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
+      <br/>
+      <div className=" text-xs">
+      This May Take A While
+      </div>
+       
+    </div></div>:<div></div>}</td> */}
+    <td className=" border-black border-4 px-16 py-4"><Link state={numbers} to='/Stimulifemale' className=" underline"> Link</Link></td>  </tr>
+  {/* <tr
+    class="hover:bg-gray-50 focus:bg-gray-300 active:bg-red-200"
+    tabindex="0"
+  >
+    <td class="border px-8 py-4">Ernst Handel</td>
+    <td class="border px-8 py-4">Maggie O'Neill</td>
+    <td class="border px-8 py-4">Austria</td>
+  </tr> */}
+</table>
 
-            {
-              
-            audioId?.map((student, index) => (
-            
-                
-                <div className='border  border-amber-500  text-3xl' key={index}>{student}</div>
-              
-            ))
-            }
-  
-</div> */}
+              </div>   
 
-{/* <div>
-  {
-    audioId?.map((ab,i)=>(
-      <h1 key={i}>{ab.id}</h1>
-    ))
-  }
-</div> */}
-{/* <div className=' text-teal-500'>
-  LINKS
-</div> */}
+
 
   
 
          </div>    
          
 
-        NUMBER OF AUDIOS- 
-           {filteredinfo?.length} 
+        
+           
           <div className="w-full flex flex-wrap  gap-14   justify-evenly   mt-24 ">
             
             {

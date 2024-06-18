@@ -88,8 +88,8 @@ useEffect(()=>{
   }))
 
   const x=JSON.stringify(data)
-  localStorage.setItem("allId",x)
-  const g=JSON.parse(localStorage.getItem("allId"))||[]
+  localStorage.setItem("SavedAllId",x)
+  const g=JSON.parse(localStorage.getItem("SavedAllId"))||[]
 
 
 setallid(g)
@@ -109,8 +109,9 @@ const rough=[]
 useEffect(()=>{
   //SAVING ALL THE IDS FROM THE LOCAL STORAGE TO CONST DATA //
    const getdata=async()=>{
-   const data=JSON.parse(localStorage.getItem("allId"))||[]//FETCHED ALL THE IDS SUCCESSFULLY
+   const data=JSON.parse(localStorage.getItem("SavedAllId"))||[]//FETCHED ALL THE IDS SUCCESSFULLY
   //  console.log("ALL THE IDS(DATA) ",data)
+  console.log(data)
   if(filters.moth){
 //     data.map(async(elem)=>{
 //       const f=query(collection(database,`users/${elem.id}/subjects`),where('origin','==',filters.statet),where('gender','==',filters.gendert),where('mt','==',filters.moth))
@@ -265,13 +266,7 @@ console.log("AUDIO ID------------>",audioId);
 //&&&&&&&&&&&&&*****************************FOR FETCHING LINKSSS------------------------------>>>>>>>>>>>>
 useEffect(()=>{
   
-  const getthat=()=>{
-    
-    
-    //in this array we store our ids that the query wants
-    // const files=['LKOOCw6tw7TfBxspoBKTwtwVi5Q2','WbR1f18DgIMqDBvtwzOuvsPJaWm1']
-  
-    
+  const getthat=()=>{ 
     setaudioinfo([])
 
   audioId?.map( 
@@ -1335,7 +1330,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 
     <div className='mx-auto  w-[1200px] flex-col gap-7' >
       
-      <div className='text-4xl text-center mb-32 text-purple-900  font-extrabold '>
+      <div className='text-4xl text-center mb-32   text-gray-800  font-extrabold '>
         AUDIO FETCHING DASHBOARD
         
 
@@ -1354,7 +1349,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
               
               required
 
-              className="  rounded-3xl  border-4  border-purple-700  p-2"
+              className="  rounded-3xl  border-4  border-neutral-600  p-2"
 
             >
               <option disabled={true} value="">
@@ -1380,7 +1375,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 
             </label>  */}
             <select
-              className="  rounded-3xl  border-4  border-purple-700 p-2"
+              className="  rounded-3xl  border-4  border-neutral-600 p-2"
               type="text"
               name="gendert"
               id="gendert"
@@ -1412,7 +1407,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
 <div>
 
             <input type="text" name="moth" id="moth" value={filters.moth} onChange={(events)=>handle(events)} 
-            placeholder='Your Mother-Tounge'  className="  rounded-3xl  border-4  border-purple-700 p-2"/>
+            placeholder='Your Mother-Tounge'  className="  rounded-3xl  border-4  border-neutral-600 p-2"/>
 
 </div>
   </div>
@@ -1428,7 +1423,7 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
  <div className='align-middle text-center mx-auto mt-10'>
     
       <button onClick={()=>(setsubmit(true))}
-      className={`flex gap-3 mx-auto  rounded-3xl  text-2xl border-4  border-purple-700 ${submitted ? "bg-violet-200 opacity-0" : " bg-purple-200" }  p-2`}>
+      className={`flex gap-3 mx-auto  rounded-3xl  text-2xl border-4  border-neutral-600 ${submitted ? " bg-zinc-800 opacity-0" : " bg-neutral-500" }  p-2`}>
         <div className=' font-semibold'>
         GET AUDIO
         </div>
@@ -1453,7 +1448,9 @@ console.log("AUDIO-LINKS(SAVED IN AUDIO INFO) =====>",audioinfo)
             ))
             }
   
-</div> */}
+</div> 
+
+*/}
 
 {/* <div>
   {
