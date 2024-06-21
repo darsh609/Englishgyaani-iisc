@@ -178,7 +178,7 @@ console.log(".........",numbers)
 
         </div>
            
-        <div className='dropdown  mr-40 rounded-3xl  ml-[640px]' >
+        <div className='dropdown  mr-40 rounded-3xl  ml-[530px]' >
                 {
                     data.filter((item)=>{const searchTerm=filter.toLowerCase()
                         const ans=item.words.toLowerCase()

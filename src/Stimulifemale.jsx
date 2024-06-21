@@ -16,6 +16,7 @@ export const Stimulifemale = (props) => {
     
     const location = useLocation();
     const numbers=location.state
+    const statet=props.statet
     // const numbers=number.num
     // const filter=location.filter
 
@@ -24,6 +25,8 @@ export const Stimulifemale = (props) => {
     // const setnum=props.setnumbers
     const [malestimuli,setmalestimuli]=useState([])
     const[femalestimuli,setfemalestimuli]=useState([])
+    const setappliedmt=props.setappliedmt
+    const appliedmothertounge = props.appliedmothertounge 
     const[word,setword]=useState(data.find(el=>el.ids==numbers).words)
 
     // const malestimuli=props.malestimuli
@@ -56,10 +59,24 @@ export const Stimulifemale = (props) => {
 
   return (
     <div>
+       <div className='text-center font-extrabold text-4xl '>
+        
+        {
+         statet?<div><div className=" mb-16">{statet}</div>
+         {
+           appliedmothertounge?
+           <div className=" mt-28">
+   Mother-Tounge:-{appliedmothertounge}
+ </div>:<div></div>
+         }
+         </div>:<div>Select State on Home Page </div>
+        } 
+ 
+     </div>
               <div className="ml-[530px]">
-                <div className='text-4xl font-bold mr-96 mb-40'>
+                <div className='text-4xl font-bold ml-56 mt-12 mb-16 flex  '>
                 
-                    {word}-{numbers}
+                <div className='font-extrabold'>Stimuli:-</div> <div className=' translate-y-1 translate-x-3 text-3xl font-serif   text-slate-800 underline'>{word}</div>
                 
 
                 </div>

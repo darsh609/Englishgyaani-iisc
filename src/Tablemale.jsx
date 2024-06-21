@@ -37,6 +37,8 @@ export const Tablemale = (props) => {
     const setstate=props.setstate
     const male=props.male
   const female=props.female
+  const setappliedmt=props.setappliedmt
+  const appliedmothertounge = props.appliedmothertounge 
   const db=getFirestore()
   const storage = getStorage();
 //   const[maleaudio,setmaleaudio]=useState(false)
@@ -831,14 +833,20 @@ malelinks?.map((student, index) => (
 
 
 
-
-    <div className='text-center font-extrabold text-4xl mt-44'>
+<div className='text-center font-extrabold text-4xl '>
         
-       {
-        statet?<div>{statet}</div>:<div>Select State on Home Page </div>
-       } 
-
-    </div>
+        {
+         statet?<div><div className=" mb-16">{statet}</div>
+         {
+           appliedmothertounge?
+           <div className=" mt-28">
+   Mother-Tounge:-{appliedmothertounge}
+ </div>:<div></div>
+         }
+         </div>:<div>Select State on Home Page </div>
+        } 
+ 
+     </div>
         {/* <div className='mt-56 ml-[400px] w-96'>
             <table className='  border-4  border-separate border-spacing-[40px] border-gray-900  rounded-3xl table-auto  '>
                <thead>
@@ -873,7 +881,7 @@ malelinks?.map((student, index) => (
 
 
 
-<div className='  mt-24  ml-60'>
+<div className='  mt-24  ml-80'>
 
 <table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
   <tr className=" border-b-8 border-black">

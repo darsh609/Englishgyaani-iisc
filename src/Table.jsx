@@ -1,7 +1,7 @@
 
 
 import {Howl} from "howler"
-
+import 'react-toastify/dist/ReactToastify.css';
 import 'react-h5-audio-player/lib/styles.css';
 import "./App.css"
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react'
 import RingLoader from 'react-spinners/RingLoader'
 import AudioPlayer from 'react-h5-audio-player';
 import { Audio2 } from './Audio2';
+import { ToastContainer,toast } from "react-toastify";
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 import{
     collection,
@@ -23,6 +24,7 @@ import{
 } from 'firebase/firestore'
 import { Tablemale } from "./Tablemale";
 import { Filters } from "./Filters";
+//--legacy-peer-deps
 export const Table = (props) => {
   const navigate=useNavigate(props);
     const [loading,setloading]=useState(false)
@@ -33,9 +35,12 @@ export const Table = (props) => {
       },30000)
       
     },[])
+
     const statet=props.statet
     const setstate=props.setstate
     const male=props.male
+    const setappliedmt=props.setappliedmt
+    const appliedmothertounge = props.appliedmothertounge 
   const female=props.female
   const db=getFirestore()
   const storage = getStorage();
@@ -354,7 +359,20 @@ export const Table = (props) => {
 // getmalelinks()
 
 // },[male])
+//#
 
+
+useEffect(()=>{
+  const toastt=()=>{
+    male.length>0?toast.success('Audio Found For Male'):toast.error('No Audio Found For Male')
+    
+    female.length>0?toast.success('Audio Found For Female',{backgroundColor: '#8329C5',
+      color: '#ffffff',}):toast.error('No Audio Found For Female',{backgroundColor: '#33F2FF',
+        color: '#33F2FF',deplay:12000})
+  }
+  toastt()
+
+},[])
 
 
 useEffect(()=>{
@@ -815,326 +833,7 @@ useEffect(()=>{
           
       
           male?.map((filename)=>{
-              //2023
-          //     for(let i=12;i<=12;i++){
-          //         i=i.toString()
-          //         if(i<10){
-          //           //////
-                    
-      
-          //         for(let j=24;j<=27;j++){
-          //           j=j.toString()
-          //           if(j<10){
-          //             listAll(ref( storage, `2023/${`0`+i}/${`0`+j}/${filename}/${filename}/english` ))
-          //             .then( (url) => 
-          //               // console.log( "Got download url: ", url.items );
-          //               // rough.push(url.items)
-          //               url.items.forEach((x)=>{
-          //                 getDownloadURL(x).then((fetch)=>{
-          //                   setfemalelinks((prev)=>[...prev,fetch])
               
-                            
-          //                 })                
-              
-          //         })
-          //                 )
-                        
-          //                 listAll(ref( storage, `2023/${`0`+i}/${`0`+j}/Anonymous/${filename}/english` ))
-          //                 .then( (url) => 
-          //                   // console.log( "Got download url: ", url.items );
-          //                   // rough.push(url.items)
-          //                   url.items.forEach((x)=>{
-          //                     getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])                
-                                
-          //                     })
-                              
-                  
-          //             })
-          //                     )
-      
-      
-          //           }
-          //           else{
-          //             listAll(ref( storage, `2023/${`0`+i}/${j}/${filename}/${filename}/english` ))
-          //             .then( (url) => 
-          //               // console.log( "Got download url: ", url.items );
-          //               // rough.push(url.items)
-          //               url.items.forEach((x)=>{
-          //                 getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-              
-                            
-          //                 })                
-              
-          //         })
-          //                 )
-                        
-          //                 listAll(ref( storage, `2023/${`0`+i}/${j}/Anonymous/${filename}/english` ))
-          //                 .then( (url) => 
-          //                   // console.log( "Got download url: ", url.items );
-          //                   // rough.push(url.items)
-          //                   url.items.forEach((x)=>{
-          //                     getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                  
-                                
-          //                     })
-                              
-                  
-          //             })
-          //                     )
-      
-          //           }
-      
-      
-                   
-      
-      
-          //         }
-      
-                  
-          //         }
-      
-      
-          //         else{
-          //           /////////////////////////
-          //           for(let j=24;j<=27;j++){
-          //             j=j.toString()
-          //             if(j<10){
-          //               listAll(ref( storage, `2023/${i}/${`0`+j}/${filename}/${filename}/english` ))
-          //               .then( (url) => 
-          //                 // console.log( "Got download url: ", url.items );
-          //                 // rough.push(url.items)
-          //                 url.items.forEach((x)=>{
-          //                   getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-                
-                              
-          //                   })                
-                
-          //           })
-          //                   )
-                          
-          //                   listAll(ref( storage, `2023/${i}/${`0`+j}/Anonymous/${filename}/english` ))
-          //                   .then( (url) => 
-          //                     // console.log( "Got download url: ", url.items );
-          //                     // rough.push(url.items)
-          //                     url.items.forEach((x)=>{
-          //                       getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                    
-                                  
-          //                       })
-                                
-                    
-          //               })
-          //                       )
-      
-      
-          //             }
-          //             else{
-          //               listAll(ref( storage, `2023/${i}/${j}/${filename}/${filename}/english` ))
-          //               .then( (url) => 
-          //                 // console.log( "Got download url: ", url.items );
-          //                 // rough.push(url.items)
-          //                 url.items.forEach((x)=>{
-          //                   getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-                
-                              
-          //                   })                
-                
-          //           })
-          //                   )
-                          
-          //                   listAll(ref( storage, `2023/${i}/${j}/Anonymous/${filename}/english` ))
-          //                   .then( (url) => 
-          //                     // console.log( "Got download url: ", url.items );
-          //                     // rough.push(url.items)
-          //                     url.items.forEach((x)=>{
-          //                       getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                    
-                                  
-          //                       })
-                                
-                    
-          //               })
-          //                       )
-      
-          //             }
-      
-      
-                     
-      
-      
-          //           }
-                    
-                    
-          //         }
-      
-          //       }
-          // //2024
-      
-          //     for(let i=1;i<=12;i++){
-          //         i=i.toString()
-          //         if(i<10){
-          //           //////
-                    
-      
-          //         for(let j=1;j<=31;j++){
-          //           j=j.toString()
-          //           if(j<10){
-          //             listAll(ref( storage, `2024/${`0`+i}/${`0`+j}/${filename}/${filename}/english` ))
-          //             .then( (url) => 
-          //               // console.log( "Got download url: ", url.items );
-          //               // rough.push(url.items)
-          //               url.items.forEach((x)=>{
-          //                 getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-              
-                            
-          //                 })                
-              
-          //         })
-          //                 )
-                        
-          //                 listAll(ref( storage, `2024/${`0`+i}/${`0`+j}/Anonymous/${filename}/english` ))
-          //                 .then( (url) => 
-          //                   // console.log( "Got download url: ", url.items );
-          //                   // rough.push(url.items)
-          //                   url.items.forEach((x)=>{
-          //                     getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                  
-                                
-          //                     })
-                              
-                  
-          //             })
-          //                     )
-      
-          //           }
-          //           else{
-          //             listAll(ref( storage, `2024/${`0`+i}/${j}/${filename}/${filename}/english` ))
-          //             .then( (url) => 
-          //               // console.log( "Got download url: ", url.items );
-          //               // rough.push(url.items)
-          //               url.items.forEach((x)=>{
-          //                 getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-              
-                            
-          //                 })                
-              
-          //         })
-          //                 )
-                        
-          //                 listAll(ref( storage, `2024/${`0`+i}/${j}/Anonymous/${filename}/english` ))
-          //                 .then( (url) => 
-          //                   // console.log( "Got download url: ", url.items );
-          //                   // rough.push(url.items)
-          //                   url.items.forEach((x)=>{
-          //                     getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                  
-                                
-          //                     })
-                              
-                  
-          //             })
-          //                     )
-      
-          //           }
-      
-      
-                   
-      
-      
-          //         }
-      
-                  
-          //         }
-      
-      
-          //         else{
-          //           /////////////////////////
-          //           for(let j=1;j<=31;j++){
-          //             j=j.toString()
-          //             if(j<10){
-          //               listAll(ref( storage, `2024/${i}/${`0`+j}/${filename}/${filename}/english` ))
-          //               .then( (url) => 
-          //                 // console.log( "Got download url: ", url.items );
-          //                 // rough.push(url.items)
-          //                 url.items.forEach((x)=>{
-          //                   getDownloadURL(x).then((fetch)=>{
-          //                     setmalelinks((prev)=>[...prev,fetch])
-                
-                              
-          //                   })                
-                
-          //           })
-          //                   )
-                          
-          //                   listAll(ref( storage, `2024/${i}/${`0`+j}/Anonymous/${filename}/english` ))
-          //                   .then( (url) => 
-          //                     // console.log( "Got download url: ", url.items );
-          //                     // rough.push(url.items)
-          //                     url.items.forEach((x)=>{
-          //                       getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])                  
-                                  
-          //                       })
-                                
-                    
-          //               })
-          //                       )
-      
-      
-          //             }
-          //             else{
-          //               listAll(ref( storage, `2024/${i}/${j}/${filename}/${filename}/english` ))
-          //               .then( (url) => 
-          //                 // console.log( "Got download url: ", url.items );
-          //                 // rough.push(url.items)
-          //                 url.items.forEach((x)=>{
-          //                   getDownloadURL(x).then((fetch)=>{
-          //                     setfemalelinks((prev)=>[...prev,fetch])
-                
-                              
-          //                   })                
-                
-          //           })
-          //                   ).catch((error)=>{alert("ENTER CORRECT MOTHER TOUNGE")})
-                          
-          //                   listAll(ref( storage, `2024/${i}/${j}/Anonymous/${filename}/english` ))
-          //                   .then( (url) => 
-          //                     // console.log( "Got download url: ", url.items );
-          //                     // rough.push(url.items)
-          //                     url.items.forEach((x)=>{
-          //                       getDownloadURL(x).then((fetch)=>{
-          //                         setfemalelinks((prev)=>[...prev,fetch])
-                    
-                                  
-          //                       })
-                                
-                    
-          //               })
-          //                       )
-      
-          //             }
-      
-      
-                     
-      
-      
-          //           }
-                    
-                    
-          //         }
-      
-          //       }
           for(let y=2024;y>=2023;y--){
               for(let i=1;i<=12;i++){
                   i=i.toString()
@@ -1264,18 +963,8 @@ useEffect(()=>{
 
     console.log("table--->",statet)
   return (
-    <div className='' >
-
-
-      {
-        
-      }
-        <div>
-            
-        </div>
-        <div>
-        
-        </div>
+    <div className='-translate-y-36' >
+      
 
 
         <div className='text-center mx-auto '>
@@ -1296,10 +985,18 @@ malelinks?.map((student, index) => (
 
 
 
-    <div className='text-center font-extrabold text-4xl mt-44'>
+
+    <div className='text-center font-extrabold text-4xl '>
         
        {
-        statet?<div>{statet}</div>:<div>Select State on Home Page </div>
+        statet?<div><div className=" mb-16">{statet}</div>
+        {
+          appliedmothertounge?
+          <div className=" mt-28">
+  Mother-Tounge:-{appliedmothertounge}
+</div>:<div></div>
+        }
+        </div>:<div>Select State on Home Page </div>
        } 
 
     </div>
@@ -1341,6 +1038,7 @@ malelinks?.map((student, index) => (
   {/* <div>
     <Tablemale/>
   </div> */}
+
 
 <table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
   <tr className=" border-b-8 border-black">

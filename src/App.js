@@ -2,15 +2,15 @@ import "./App.css";
 import {getDatabase,ref,set} from "firebase/database";
 import {database} from "./firebase";
 import {useForm} from "react-hook-form";
-import Login from "./login";
+// import Login from "./login";
 import React from "react";
-import Signin from "./signin";
-import Dashboard from "./dashboard";
+// import Signin from "./signin";
+// import Dashboard from "./dashboard";
 import Dashboard2 from "./dashboard2";
 import {Route,Routes} from "react-router-dom"
 import { Filters } from "./Filters";
 import { useState } from "react";
-import India from "./india";
+// import India from "./india";
 import { Home } from "./Home";
 import { Collect } from "./Collect";
 import { Table } from "./Table";
@@ -18,6 +18,7 @@ import { Tablemale } from "./Tablemale";
 import { Tablefemale } from "./Tablefemale";
 import { Stimulifemale } from "./Stimulifemale";
 import { Stimulimale } from "./Stimulimale";
+// import { Map } from "./Map";
 
 // const db=getDatabase(database);
 
@@ -52,11 +53,12 @@ function App() {
 
   const [malestimuli,setmalestimuli]=useState([])
     const[femalestimuli,setfemalestimuli]=useState([])
+    const [appliedmothertounge,setappliedmt]=useState('')
     const [numbers,setnumbers]=useState('')
 
   return (
-    <div className="  h-screen overflow-x-hidden  bg-cover   bg-slate-400">
-      <div className="text-3xl font-bold mb-44 ml-6 ">
+    <div className="  h-screen overflow-x-hidden  bg-cover   bg-slate-500">
+      <div className="text-3xl font-bold  mb-80 ml-6 ">
        English Gyaani Audio Fetching Dashboard
       </div>
     
@@ -64,25 +66,25 @@ function App() {
 
        <div className="text-4xl text-center ">
        <Routes>
-       <Route path="/Dashboard2" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
+       {/* <Route path="/Dashboard2" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
           <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo} malestimuli={malestimuli} setmalestimuli={setmalestimuli}
           femalestimuli={femalestimuli} setfemalestimuli={setfemalestimuli} numbers={numbers} setnumbers={setnumbers}/>}/>
-          <Route path="india" element={<India/>}/>
+          
 
           
-          <Route path="collect" element={<Collect/>}/>
+          <Route path="collect" element={<Collect/>}/> */}
 
 
 
-          <Route path="/" element={<Home statet={statet} setstate={setstate} setfemalelinks={setfemalelinks}  male={male} setmale={setmale} female={female} setfemale={setfemale}/>}/>
-          <Route path="Table" element={<Table malelinks={malelinks} setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks} statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
-          <Route path="Female" element={<Tablefemale malelinks={malelinks} setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks}  statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
-          <Route path="Male" element={<Tablemale malelinks={malelinks} setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks}  statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
-          <Route path="Stimulifemale" element={<Stimulifemale malestimuli={malestimuli} setmalestimuli={setmalestimuli}
+          <Route path="/" element={<Home statet={statet} setstate={setstate} setfemalelinks={setfemalelinks} setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  male={male} setmale={setmale} female={female} setfemale={setfemale}/>}/>
+          <Route path="Table" element={<Table malelinks={malelinks} setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks} statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
+          <Route path="Female" element={<Tablefemale setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  malelinks={malelinks} setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks}  statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
+          <Route path="Male" element={<Tablemale setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  malelinks={malelinks} setfemalelinks={setfemalelinks} setmalelinks={setmalelinks} femalelinks={femalelinks}  statet={statet} setstate={setstate} female={female} setfemale={setfemale} male={male} setmale={setmale}/>}/>
+          <Route path="Stimulifemale" element={<Stimulifemale statet={statet} setstate={setstate} setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  malestimuli={malestimuli} setmalestimuli={setmalestimuli}
           femalestimuli={femalestimuli} setfemalestimuli={setfemalestimuli} femalelinks={femalelinks} numbers={numbers}/>}/>
-          <Route path="Stimulimale" element={<Stimulimale malestimuli={malestimuli} setmalestimuli={setmalestimuli}
+          <Route path="Stimulimale" element={<Stimulimale statet={statet} setstate={setstate} setappliedmt={setappliedmt} appliedmothertounge={appliedmothertounge}  malestimuli={malestimuli} setmalestimuli={setmalestimuli}
           femalestimuli={femalestimuli} setfemalestimuli={setfemalestimuli} numbers={numbers} malelinks={malelinks} setnumbers={setnumbers}/>}/>
-
+{/* <Route path="/Map" element={<Map/>} /> */}
         </Routes>
 
 
