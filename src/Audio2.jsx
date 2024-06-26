@@ -38,7 +38,7 @@ export const Audio2 = (props) => {
         </div></div>: 
         <div className="font-bold">
            <div className='align-middle text-center mx-auto mt-10'>
-    
+     
 
 
    {/* <div className='text-center mx-auto '>

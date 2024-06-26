@@ -220,7 +220,7 @@ const[locall,setlocal]=useState([])
 console.log("orignial data---->",data)
   
     const x=JSON.stringify(data)
-    localStorage.setItem("ALLIDs",x)
+    localStorage.setItem(`${date}/${month}/${year}`,x)
     //setValue//
     // const g=JSON.parse(localStorage.getItem("SavedAllId"))||[]
   
@@ -235,7 +235,8 @@ console.log("orignial data---->",data)
   //add date here
 
 const getlang=()=>{
-  const data=JSON.parse(localStorage.getItem("ALLIDs"))||[]
+  const data=JSON.parse(localStorage.getItem(`${date}/${month}/${year}`))||[]
+  /////
 
 setmotherarray([])
   setmother([])
@@ -261,7 +262,8 @@ console.log("Mother0----->", motherarray)
 }
   useEffect(()=>{
 
-    const data=JSON.parse(localStorage.getItem("ALLIDs"))||[]
+    const data=JSON.parse(localStorage.getItem(`${date}/${month}/${year}`))||[]
+    //////////////////
     console.log("data---->",data)
     // const g=statet?data.find((e)=>e.origin==statet):''
     // console.log("g--->",g)
@@ -342,7 +344,8 @@ const getaudiobylanguage=((e)=>{
 useEffect(()=>{
   setmale([])
   setfemale([])
-  const data=JSON.parse(localStorage.getItem("ALLIDs"))||[]
+  const data=JSON.parse(localStorage.getItem(`${date}/${month}/${year}`))||[]
+  ////////////////////////////////////////////////////////
 const fun=()=>{
 
   data.map((e)=>{
