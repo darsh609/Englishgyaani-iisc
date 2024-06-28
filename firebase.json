@@ -1,11 +1,17 @@
 {
   "hosting": {
-    "public": "build",
-    "site": "test2-dk",
+    "public": "public",
+    "site":"test2-dk",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

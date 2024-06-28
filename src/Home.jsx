@@ -412,14 +412,60 @@ fun()
   return (
     <div>
 
-<div>
-<div className='w-[1800px]  flex-row'>
-<div className='ml-[1200px]   '>
-  
-  <div className='translate-y-[110px]'>
+<div className=' mt-[7rem] flex flex-row flex-wrap  justify-evenly  '>
+
+
+
+
+
+
+{/* ṃap */}
+
+
+           <div className='lg:w-[43rem] md:w-[34rem] w-[20rem]'>
+        <SVGMap map={India} onLocationClick={onLocationClick} 
+ className={` svg-map`}/>
+        
+        </div>
+
+
+{/* content */}
+        <div className='flex  flex-wrap gap-[4rem]  flex-col justify-evenly'>
+          
+{/* state */}
+        <div className=' flex flex-col justify-between '>
+        <h3 className=" lg:text-[2.9rem] md:text-[2.3rem] sm:[1.4rem] font-serif font-bold display-2 mb-[1rem]">{statet}</h3>
+
+        <div className=' align-middle text-center mx-auto '>
     {
-      motherarray.length>0?<div>
-        <div className='mb-10 font-semibold border-4 border-b-black text-4xl '>Get By Mother Tounge:-</div>
+      isselected?<div></div>:
+
+       <button onClick={()=>navigate("/Table")}
+      className={` gap-3 flex flex-row mx-auto  rounded-3xl    border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
+        <div className=' font-semibold lg:text-[1.4rem]  text-[1.1rem]  '>
+        GET ALL AUDIO
+        </div>
+        
+        <div className=''>
+
+        <FaArrowRight />
+
+        </div>
+               </button>
+    }
+     
+
+         </div>    
+        </div>
+
+
+  
+  {/* //mother tougne */}
+  <div className=''>
+    {
+      motherarray.length>0?
+      <div className='flex flex-col justify-between'>
+        <div className=' font-semibold border-4 border-b-black lg:text-[2rem] text-[1.4rem] mb-[1rem] '>Get By Mother Tounge:-</div>
       
       {/* <div className='   mr-20'>
           { motherarray?.map((e,i)=>(
@@ -467,7 +513,7 @@ fun()
               
               required
 
-              className="  rounded-3xl  border-8   border-slate-600  p-4"
+              className="  rounded-3xl mb-[1rem] border-8 lg:text-[2rem] text-[1.6rem]  border-slate-600  p-4"
 
             >
               <option disabled={true} className='font-semibold' value="">
@@ -481,10 +527,10 @@ fun()
                 )
               })}
             </select>
-            <div className='mt-6 ml-44'>
+            <div className=' '>
             {
               isselected?<button onClick={()=>navigate("/Table")}
-              className={`flex gap-3 mx-auto  rounded-3xl  mr-56 text-2xl border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
+              className={`  gap-3 flex flex-row mx-auto  rounded-3xl   lg:text-[1.8rem] md:text-[1.4rem] text-[1.3rem] border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
                 <div className=' font-semibold'>
                 GET AUDIO
                 </div>
@@ -508,91 +554,12 @@ fun()
     
   </div>
         
-        </div>
-
-
-        <div className=' -translate-y-[300px]'>
-        <h3 className="mr-[1200px]  text-5xl font-serif font-bold display-2">{statet}</h3>
-
-        <div className='mr-[1100px] align-middle text-center mx-auto mt-10'>
-    {
-      isselected?<div></div>:
-       <button onClick={()=>navigate("/Table")}
-      className={`flex gap-3 mx-auto  rounded-3xl  mr-56 text-2xl border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
-        <div className=' font-semibold'>
-        GET ALL AUDIO
-        </div>
         
-        <div className=' mt-1'>
-
-        <FaArrowRight />
-
-        </div>
-               </button>
-    }
-     
-
-         </div>    
-        </div>
 
         
        
         
            </div>
-
-
-
-
-
-
-
-           <div className='w-[1000px] h-[1000px] ml-96 -translate-y-[150px]'>
-        <SVGMap map={India} onLocationClick={onLocationClick} 
- className={` svg-map`}/>
-        
-        </div>
-
-{/* <div className='w-[full] h-[full]'>
-        
-        <select
-              type="text"
-              name="state"
-              id="state"
-              placeholder="Select Your State"
-              value={statet}
-              onChange={(events)=>handle(events)} 
-              defaultValue="none"
-              
-              required
-
-              className="  rounded-3xl  border-4  border-slate-900  p-2"
-
-            >
-              <option disabled={true} value="">
-          --Choose State--
-        </option>
-              {state.map((ele) => {
-                return (
-                  <option value={ele.name} key={ele.key}>
-                    {ele.name}
-                  </option>
-                )
-              })}
-            </select>
-
-
-          </div> */}
-
-
-
-              
-{/* 
-         <div>
-          {
-           chang? <Table/>:<div>Select from the dropdown </div>
-            
-          }
-         </div> */}
 
 
 

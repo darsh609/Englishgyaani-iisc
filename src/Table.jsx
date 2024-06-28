@@ -963,7 +963,7 @@ useEffect(()=>{
 
     console.log("table--->",statet)
   return (
-    <div className='-translate-y-36' >
+    <div className='mt-[7rem]' >
       
 
 
@@ -986,13 +986,13 @@ malelinks?.map((student, index) => (
 
 
 
-    <div className='text-center font-extrabold text-4xl '>
+    <div className='text-center font-extrabold text-[2rem] mb-[5rem]'>
         
        {
-        statet?<div><div className=" mb-16">{statet}</div>
+        statet?<div><div className=" ">{statet}</div>
         {
           appliedmothertounge?
-          <div className=" mt-28">
+          <div className=" ">
   Mother-Tounge:-{appliedmothertounge}
 </div>:<div></div>
         }
@@ -1000,47 +1000,12 @@ malelinks?.map((student, index) => (
        } 
 
     </div>
-        {/* <div className='mt-56 ml-[400px] w-96'>
-            <table className='  border-4  border-separate border-spacing-[40px] border-gray-900  rounded-3xl table-auto  '>
-               <thead>
-               <tr className=' border-4 border-gray-900  '>
-                    <th className='border-4 border-gray-900  p-7 rounded-2xl bg-slate-400'>
-                        Gender
-                    </th>
-                    <th className='border-4 border-gray-900  p-7 rounded-2xl bg-slate-400' >
-                        count
-                    </th>
-                    <th className='border-4 border-gray-900  p-7 rounded-2xl bg-slate-400'>
-                        link
-                    </th>
-                </tr>
-                </thead> 
-                <tbody>
-                <tr>
-                    <td className='border-4 border-gray-900  p-7 rounded-2xl bg-slate-400'>
-                        Male
-                    </td>
-                </tr>
-                <tr>
-                    <td className='border-4 border-gray-900  p-7 rounded-2xl bg-slate-400'>
-                        Female
-                    </td>
-                </tr>
-
-                </tbody>
-                
-            </table>
-        </div> */}
+   
 
 
+<div className=''>
 
-<div className=' mr-44 mt-24  ml-60'>
-  {/* <div>
-    <Tablemale/>
-  </div> */}
-
-
-<table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
+<table className="shadow-lg   font-bold border-collapse bg-slate-600">
   <tr className=" border-b-8 border-black">
     <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
     <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">COUNT</th>
@@ -1088,21 +1053,7 @@ malelinks?.map((student, index) => (
 </table>
 
 </div>
-{/* 
-<div>
-{
-  maleaudio?<div>
-    <Audio2 audioinfo={malelinks} />
-    </div>:<div></div>
-}
-</div>
-<div>
-{
-  femaleaudio?<div>
-    <Audio2 audioinfo={femalelinks} />
-    </div>:<div></div>
-}
-</div> */}
+
 <div>
   <Filters malelinks={malelinks} femalelinks={femalelinks} />
 </div>

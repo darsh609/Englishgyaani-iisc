@@ -58,13 +58,13 @@ function App() {
 
   return (
     <div className="  h-screen overflow-x-hidden  bg-cover   bg-slate-500">
-      <div className="text-3xl font-bold  mb-80 ml-6 ">
+      <div className="text-[1.8rem] font-bold  ">
        English Gyaani Audio Fetching Dashboard
       </div>
     
 
 
-       <div className="text-4xl text-center ">
+       <div className="text-[1.8rem] text-center ">
        <Routes>
        {/* <Route path="/Dashboard2" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
           <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo} malestimuli={malestimuli} setmalestimuli={setmalestimuli}
