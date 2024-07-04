@@ -32,7 +32,7 @@ export const Table = (props) => {
       setloading(true)
       setTimeout(()=>{
         setloading(false)
-      },50000)
+      },20000)
       
     },[])
 
