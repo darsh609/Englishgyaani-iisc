@@ -58,7 +58,7 @@ function App() {
 
   return (
     <div className="  h-screen overflow-x-hidden  bg-cover   bg-slate-500">
-      <div className="text-[1.8rem] font-bold  ">
+      <div className="md:text-[1.7rem] lg:text-[2rem] text-[1.4rem] font-bold  ">
        English Gyaani Audio Fetching Dashboard
       </div>
     

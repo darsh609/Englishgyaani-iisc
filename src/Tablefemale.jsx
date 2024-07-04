@@ -802,7 +802,7 @@ export const Tablefemale = (props) => {
 //     },[female])
     console.log("table--->",statet)
   return (
-    <div className='' >
+    <div className='text-center font-extrabold text-4xl mb-40 mt-28' >
 
 
       {
@@ -879,13 +879,13 @@ malelinks?.map((student, index) => (
 
 
 
-<div className='  mt-24  ml-80'>
+<div className=' mx-auto'>
 
-<table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
-  <tr className=" border-b-8 border-black">
-    <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">COUNT</th>
-    <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th>
+<table  className="shadow-lg w-full h-[18rem]  text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+  <tr className=" border-b-4 border-black">
+    <th className="  bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
+    <th className="   bg-teal-100  border-black border-2    font-extrabold">COUNT</th>
+    <th className="   bg-teal-100  border-black border-2    font-extrabold">NO. OF AUDIOS</th>
     {/* <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th> */}
   </tr>
 
@@ -909,9 +909,9 @@ malelinks?.map((student, index) => (
    className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-8 py-4">Female</td>
-    <td className=" border-black border-4 px-8 py-4">{female.length}</td>
-    <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
+    <td className=" border-black border-2">Female</td>
+    <td className=" border-black border-2">{female.length}</td>
+    <td className=" border-black border-2">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
       <br/>
       <div className=" text-xs">
       This May Take A While

@@ -153,16 +153,16 @@ console.log(".........",numbers)
 
 
   return (
-    <div className='w-[1100px] mt-60 mr-40'>
-        <div className='text-4xl text-center mb-32 ml-96 text-neutral-700  font-extrabold '>
+    <div className=''>
+        <div className=' text-center mb-32 ml-96 text-neutral-700  font-extrabold '>
         
         </div>
         <div className='mx-auto '>
-        <div className='flex gap-1  block'>
+        <div className='flex gap-1  '>
 
-<div className=''>
-    <label  htmlFor="text" className=" text-xl    mr-8  font-bold"></label>
-<input type="text" className="filter ml-[500px] rounded-3xl bg-slate-600  border-black border-4 " value={filter} onChange={handler} name="fill" id="fill" placeholder='Select Stimuli from dropdown'> 
+<div className='w-full'>
+    <label  htmlFor="text" className="      font-bold"></label>
+<input type="text" className="filter text-sm md:text-2xl lg:text-3xl h-[2rem] md:h-[3.7rem] lg:h-[4.3rem] w-[20rem] md:w-[29rem] lg:w-[30rem] mx-auto rounded-3xl bg-slate-600  border-black lg:border-4 md:border-4 border-2" value={filter} onChange={handler} name="fill" id="fill" placeholder='Select Stimuli from dropdown'> 
 </input>
 
 </div>
@@ -178,14 +178,14 @@ console.log(".........",numbers)
 
         </div>
            
-        <div className='dropdown  mr-40 rounded-3xl  ml-[530px]' >
+        <div className='dropdown mx-auto w-[19rem] md:w-[25rem] lg:w-[30rem] rounded-3xl  ' >
                 {
                     data.filter((item)=>{const searchTerm=filter.toLowerCase()
                         const ans=item.words.toLowerCase()
                         return( searchTerm && ans.startsWith(searchTerm)&&ans!==searchTerm);
                     }
-                ).slice(0,30).map((item,i)=>(
-                        <div onClick={()=>onsearch(item.words,item.ids)} className=' text-white dropdown-row px-10'
+                ).slice(0,10).map((item,i)=>(
+                        <div onClick={()=>onsearch(item.words,item.ids)} className='text-sm md:text-2xl lg:text-3xl text-white dropdown-row px-10'
                         key={i}>
                             {item.words}
                             </div>
@@ -212,7 +212,7 @@ console.log(".........",numbers)
 
 
 
-        <div className="w-full  flex-col ml-[400px]  mt-32 mx-auto ">
+        <div className="w-full  flex-col mt-32 mx-auto ">
         {/* { loading ?<div className='flex-col '><RingLoader color="#9B59B6 "  size={200} className='mx-auto'/> <div>Please wait 
         </div></div>:  */}
         <div className="font-bold">
@@ -233,19 +233,19 @@ console.log(".........",numbers)
 
 
             <div>
-            <table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
-  <tr className=" border-b-8 border-black">
-    <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">STIMULI COUNT</th>
+            <table className="shadow-lg w-full h-[18rem]  text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+  <tr className=" border-b-4 border-black">
+    <th className="  bg-teal-100  border-black border-2   font-extrabold">GENDER</th>
+    <th className="   bg-teal-100  border-black border-2   font-extrabold">STIMULI COUNT</th>
     {/* <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th> */}
-    <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th>
+    <th className="  bg-teal-100 border-black border-2  font-extrabold">AUDIOS</th>
   </tr>
   <tr
     className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-16 py-4">Male</td>
-    <td className=" border-black border-4 px-16 py-4">
+    <td className=" border-black border-2">Male</td>
+    <td className=" border-black border-2 ">
       {malestimuli.length}
       </td>
     {/* <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
@@ -255,15 +255,15 @@ console.log(".........",numbers)
       </div>
        
     </div></div>:<div></div>}</td> */}
-    <td className=" border-black border-4 px-16 py-4"><Link state={numbers}   to='/Stimulimale' className=" underline"> Link</Link></td>
+    <td className=" border-black border-2 "><Link state={numbers}   to='/Stimulimale' className=" underline"> Link</Link></td>
     {/* <td className={` border-black border-4 px-16 py-4  ${maleaudio?"opacity-20 text-2xl":""}`}><button onClick={()=>navigate("/Male")} >Link</button></td> */}
   </tr>
   <tr
    className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-8 py-4">Female</td>
-    <td className=" border-black border-4 px-8 py-4">{femalestimuli.length}</td>
+    <td className=" border-black border-2 ">Female</td>
+    <td className=" border-black border-2">{femalestimuli.length}</td>
     {/* <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
       <br/>
       <div className=" text-xs">
@@ -271,7 +271,7 @@ console.log(".........",numbers)
       </div>
        
     </div></div>:<div></div>}</td> */}
-    <td className=" border-black border-4 px-16 py-4"><Link state={numbers} to='/Stimulifemale' className=" underline"> Link</Link></td>  </tr>
+    <td className=" border-black border-2"><Link state={numbers} to='/Stimulifemale' className=" underline"> Link</Link></td>  </tr>
   {/* <tr
     class="hover:bg-gray-50 focus:bg-gray-300 active:bg-red-200"
     tabindex="0"
@@ -293,7 +293,7 @@ console.log(".........",numbers)
 
         
            
-          <div className="w-full flex flex-wrap  gap-14   justify-evenly   mt-24 ">
+          <div className="w-full flex flex-wrap  gap-14   justify-evenly    ">
             
             {
                 filteredinfo?.map((j,i)=>(

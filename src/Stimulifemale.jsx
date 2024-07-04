@@ -59,7 +59,7 @@ export const Stimulifemale = (props) => {
 
   return (
     <div>
-       <div className='text-center font-extrabold text-4xl '>
+       <div className='text-center font-extrabold text-2xl md:text-3xl lg:text-4xl mt-24 '>
         
         {
          statet?<div><div className=" mb-16">{statet}</div>
@@ -73,17 +73,17 @@ export const Stimulifemale = (props) => {
         } 
  
      </div>
-              <div className="ml-[530px]">
-                <div className='text-4xl font-bold ml-56 mt-12 mb-16 flex  '>
+              <div className="mx-auto">
+                <div className='text-4xl font-bold  mt-12 mb-16 flex text-center mx-auto  '>
                 
-                <div className='font-extrabold'>Stimuli:-</div> <div className=' translate-y-1 translate-x-3 text-3xl font-serif   text-slate-800 underline'>{word}</div>
-                
+                <div className='font-extrabold mx-auto text-2xl md:text-3xl lg:text-4xl'>Stimuli:-<span className=' text-2xl md:text-3xl lg:text-4xl  font-serif   text-slate-800 underline'>{word}</span></div> <div ></div>       
 
                 </div>
-            <table className="shadow-lg text-4xl  font-bold border-collapse bg-slate-600">
-  <tr className=" border-b-8 border-black">
-    <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">STIMULI COUNT</th>
+
+                <table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+                <tr className=" border-b-4 border-black">
+    <th className="   bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
+    <th className="    bg-teal-100  border-black border-2    font-extrabold">STIMULI COUNT</th>
     {/* <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th> */}
     {/* <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th> */}
   </tr>
@@ -91,8 +91,8 @@ export const Stimulifemale = (props) => {
     className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-16 py-4">Female</td>
-    <td className=" border-black border-4 px-16 py-4">{femalestimuli.length}</td>
+    <td className=" border-black border-2 ">Female</td>
+    <td className=" border-black border-2 ">{femalestimuli.length}</td>
     {/* <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
       <br/>
       <div className=" text-xs">

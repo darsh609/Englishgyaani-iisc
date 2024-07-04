@@ -963,7 +963,7 @@ useEffect(()=>{
 
     console.log("table--->",statet)
   return (
-    <div className='mt-[7rem]' >
+    <div className=' w-full mt-[7rem]' >
       
 
 
@@ -1003,45 +1003,45 @@ malelinks?.map((student, index) => (
    
 
 
-<div className=''>
+<div className='   mx-auto '>
 
-<table className="shadow-lg   font-bold border-collapse bg-slate-600">
-  <tr className=" border-b-8 border-black">
-    <th className="  bg-teal-100  border-black border-4 text-left px-16 py-4  font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-4 text-left px-16 py-4 font-extrabold">COUNT</th>
-    <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th>
-    <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th>
+<table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+  <tr className=" border-b-4 border-black">
+    <th className="   bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
+    <th className="   bg-teal-100  border-black border-2   font-extrabold">COUNT</th>
+    <th className="   bg-teal-100 border-black border-2   font-extrabold">NO. OF AUDIOS</th>
+    <th className="  bg-teal-100 border-black border-2   font-extrabold">AUDIOS</th>
   </tr>
   <tr
     className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-16 py-4">Male</td>
-    <td className=" border-black border-4 px-16 py-4">{male.length}</td>
-    <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
+    <td className=" border-black border-2 ">Male</td>
+    <td className=" border-black border-2 ">{male.length}</td>
+    <td className=" border-black border-2 ">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={45} className='mx-auto'/> <div>Fetching Audios
       <br/>
       <div className=" text-xs">
       This May Take A While
       </div>
        
     </div></div>:<div>{malelinks.length}</div>}</td>
-    <td className=" border-black border-4 px-16 py-4"><Link to='/Male' className=" underline"> Link</Link></td>
+    <td className=" border-black border-2 "><Link to='/Male' className=" underline"> Link</Link></td>
     {/* <td className={` border-black border-4 px-16 py-4  ${maleaudio?"opacity-20 text-2xl":""}`}><button onClick={()=>navigate("/Male")} >Link</button></td> */}
   </tr>
   <tr
    className=""
     tabIndex="0"
   >
-    <td className=" border-black border-4 px-8 py-4">Female</td>
-    <td className=" border-black border-4 px-8 py-4">{female.length}</td>
-    <td className=" border-black border-4 px-16 py-4">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={50} className='mx-auto'/> <div>Fetching Audios
+    <td className=" border-black border-2 ">Female</td>
+    <td className=" border-black border-2 ">{female.length}</td>
+    <td className=" border-black border-2 ">{loading ?<div className='flex-col  text-base'><RingLoader color="#393E46"  size={45} className='mx-auto'/> <div>Fetching Audios
       <br/>
       <div className=" text-xs">
       This May Take A While
       </div>
        
     </div></div>:<div>{femalelinks.length}</div>}</td>
-    <td className=" border-black border-4 px-16 py-4"><Link to='/Female' className=" underline"> Link</Link></td>  </tr>
+    <td className=" border-black border-2 "><Link to='/Female' className=" underline"> Link</Link></td>  </tr>
   {/* <tr
     class="hover:bg-gray-50 focus:bg-gray-300 active:bg-red-200"
     tabindex="0"
@@ -1054,8 +1054,11 @@ malelinks?.map((student, index) => (
 
 </div>
 
-<div>
+<div className="">
   <Filters malelinks={malelinks} femalelinks={femalelinks} />
+</div>
+<div className="h-60 mt-28">
+
 </div>
 
 
