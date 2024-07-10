@@ -802,7 +802,7 @@ export const Tablefemale = (props) => {
 //     },[female])
     console.log("table--->",statet)
   return (
-    <div className='text-center font-extrabold text-4xl mb-40 mt-28' >
+    <div className='' >
 
 
       {
@@ -831,7 +831,7 @@ malelinks?.map((student, index) => (
 </div> 
 
 
-<div className='text-center font-extrabold text-4xl '>
+<div className='text-center font-extrabold md:text-[1.7rem] text-[1.4rem] lg:text-[2rem] mb-40 mt-28  '>
         
         {
          statet?<div><div className=" mb-16">{statet}</div>
@@ -879,13 +879,13 @@ malelinks?.map((student, index) => (
 
 
 
-<div className=' mx-auto'>
+<div className='  mx-auto'>
 
-<table  className="shadow-lg w-full h-[18rem]  text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+<table  className="shadow-lg w-full h-[18rem]  bg-[#b7b7b7] text-base  md:text-2xl lg:text-3xl   font-bold border-collapse">
   <tr className=" border-b-4 border-black">
-    <th className="  bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-2    font-extrabold">COUNT</th>
-    <th className="   bg-teal-100  border-black border-2    font-extrabold">NO. OF AUDIOS</th>
+    <th className="   border-black border-2    font-extrabold">GENDER</th>
+    <th className="     border-black border-2    font-extrabold">COUNT</th>
+    <th className="   border-black border-2    font-extrabold">NO. OF AUDIOS</th>
     {/* <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th> */}
   </tr>
 

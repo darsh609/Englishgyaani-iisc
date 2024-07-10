@@ -28,14 +28,7 @@ import { Filters } from "./Filters";
 export const Table = (props) => {
   const navigate=useNavigate(props);
     const [loading,setloading]=useState(false)
-    useEffect(()=>{
-      setloading(true)
-      setTimeout(()=>{
-        setloading(false)
-      },20000)
-      
-    },[])
-
+    
     const statet=props.statet
     const setstate=props.setstate
     const male=props.male
@@ -360,6 +353,13 @@ export const Table = (props) => {
 
 // },[male])
 //#
+useEffect(()=>{
+  setloading(true)
+  setTimeout(()=>{
+    setloading(false)
+  },20000)
+  
+},[female])
 
 
 useEffect(()=>{
@@ -963,7 +963,7 @@ useEffect(()=>{
 
     console.log("table--->",statet)
   return (
-    <div className=' w-full mt-[7rem]' >
+    <div className=' text-[#000000] w-full mt-[7rem]' >
       
 
 
@@ -986,7 +986,7 @@ malelinks?.map((student, index) => (
 
 
 
-    <div className='text-center font-extrabold text-[2rem] mb-[5rem]'>
+    <div className='text-center font-extrabold md:text-[1.7rem] text-[1.4rem] lg:text-[2rem] mb-[5rem]'>
         
        {
         statet?<div><div className=" ">{statet}</div>
@@ -1005,12 +1005,12 @@ malelinks?.map((student, index) => (
 
 <div className='   mx-auto '>
 
-<table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+<table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-[#b7b7b7]">
   <tr className=" border-b-4 border-black">
-    <th className="   bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-2   font-extrabold">COUNT</th>
-    <th className="   bg-teal-100 border-black border-2   font-extrabold">NO. OF AUDIOS</th>
-    <th className="  bg-teal-100 border-black border-2   font-extrabold">AUDIOS</th>
+    <th className="   bg-[#b7b7b7]  border-black border-2    font-extrabold">GENDER</th>
+    <th className="   bg-[#b7b7b7]  border-black border-2   font-extrabold">COUNT</th>
+    <th className="   bg-[#b7b7b7] border-black border-2   font-extrabold">NO. OF AUDIOS</th>
+    <th className="  bg-[#b7b7b7] border-black border-2   font-extrabold">AUDIOS</th>
   </tr>
   <tr
     className=""

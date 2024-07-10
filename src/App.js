@@ -57,14 +57,14 @@ function App() {
     const [numbers,setnumbers]=useState('')
 
   return (
-    <div className="  h-screen overflow-x-hidden  bg-cover   bg-slate-500">
-      <div className="md:text-[1.7rem] lg:text-[2rem] text-[1.4rem] font-bold  ">
-       English Gyaani Audio Fetching Dashboard
+    <div className="    text-[#000000] h-screen overflow-x-hidden  bg-cover  bg-[#525252]">
+      <div className="md:text-[1.7rem] mx-auto lg:text-[2rem]  text-[1.4rem] font-bold  ">
+       English Gyani Audio Fetching Dashboard
       </div>
     
 
 
-       <div className="text-[1.8rem] text-center ">
+       <div className="text-[1.8rem] text-center  text-[#000000]">
        <Routes>
        {/* <Route path="/Dashboard2" element={<Dashboard2 audioinfo={audioinfo}  setaudioinfo={setaudioinfo}/>}/>
           <Route path="filters" element={<Filters audioinfo={audioinfo}  setaudioinfo={setaudioinfo} malestimuli={malestimuli} setmalestimuli={setmalestimuli}

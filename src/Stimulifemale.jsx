@@ -76,14 +76,14 @@ export const Stimulifemale = (props) => {
               <div className="mx-auto">
                 <div className='text-4xl font-bold  mt-12 mb-16 flex text-center mx-auto  '>
                 
-                <div className='font-extrabold mx-auto text-2xl md:text-3xl lg:text-4xl'>Stimuli:-<span className=' text-2xl md:text-3xl lg:text-4xl  font-serif   text-slate-800 underline'>{word}</span></div> <div ></div>       
+                <div className='font-extrabold mx-auto text-2xl md:text-3xl lg:text-4xl'>Stimuli:-<span className=' text-2xl md:text-3xl lg:text-4xl  font-serif    text-[#8c8c8c] underline'>{word}</span></div> <div ></div>       
 
                 </div>
 
-                <table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+                <table className="shadow-lg w-full  h-[18rem]    text-base  md:text-2xl lg:text-3xl   font-bold border-collapse  bg-[#b7b7b7]">
                 <tr className=" border-b-4 border-black">
-    <th className="   bg-teal-100  border-black border-2    font-extrabold">GENDER</th>
-    <th className="    bg-teal-100  border-black border-2    font-extrabold">STIMULI COUNT</th>
+    <th className="     border-black border-2    font-extrabold">GENDER</th>
+    <th className="     border-black border-2    font-extrabold">STIMULI COUNT</th>
     {/* <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th> */}
     {/* <th className="  bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">AUDIOS</th> */}
   </tr>

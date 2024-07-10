@@ -410,9 +410,9 @@ fun()
 
       
   return (
-    <div>
+    <div className=' text-[#000000]'>
 
-<div className=' mt-[7rem] flex flex-row flex-wrap  justify-evenly  '>
+<div className=' text-[#000000] mt-[7rem] flex flex-row flex-wrap  justify-evenly  '>
 
 
 
@@ -441,7 +441,7 @@ fun()
       isselected?<div></div>:
 
        <button onClick={()=>navigate("/Table")}
-      className={` gap-3 flex flex-row mx-auto  rounded-3xl    border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
+      className={` gap-3 flex flex-row mx-auto  rounded-3xl    border-2  border-[#000000] ${statet ? " bg-[#8c8c8c] " : " bg-[#8c8c8c] opacity-0" }  p-2`}>
         <div className=' font-semibold lg:text-[1.4rem]  text-[1.1rem]  '>
         GET ALL AUDIO
         </div>
@@ -513,7 +513,7 @@ fun()
               
               required
 
-              className="  rounded-3xl mb-[1rem] border-8 lg:text-[2rem] text-[1.6rem]  border-slate-600  p-4"
+              className="  rounded-3xl mb-[1rem] border-2 lg:text-[2rem] text-[1.6rem]  border-[#000000]  p-4"
 
             >
               <option disabled={true} className='font-semibold' value="">
@@ -530,7 +530,7 @@ fun()
             <div className=' '>
             {
               isselected?<button onClick={()=>navigate("/Table")}
-              className={`  gap-3 flex flex-row mx-auto  rounded-3xl   lg:text-[1.8rem] md:text-[1.4rem] text-[1.3rem] border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
+              className={`  gap-3 flex flex-row mx-auto  rounded-3xl   bg-[#8c8c8c]  lg:text-[1.8rem] md:text-[1.4rem] text-[1.3rem] border-2  border-[#000000] ${statet ? " bg-[#8c8c8c]" : " bg-[#8c8c8c]opacity-0" }  p-2`}>
                 <div className=' font-semibold'>
                 GET AUDIO
                 </div>

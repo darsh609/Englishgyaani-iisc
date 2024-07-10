@@ -34,7 +34,7 @@ export const Audio2 = (props) => {
     // const j="https://firebasestorage.googleapis.com/v0/b/imprint2024.appspot.com/o/2024%2F03%2F12%2F4V21DgkdCAZ8yuMXz76lB4SBuiC3%2F4V21DgkdCAZ8yuMXz76lB4SBuiC3%2Fenglish%2F_4V21DgkdCAZ8yuMXz76lB4SBuiC3_4V21DgkdCAZ8yuMXz76lB4SBuiC3_english_545_1710243091390.wav?alt=media&token=9f61363a-742b-4aa4-a812-72bf448bdbc5"
   return (
     <div className="w-full mx-auto flex-col mt-32 ">
-        { loading ?<div className='flex-col '><RingLoader color="#393E46"  size={200} className='mx-auto'/> <div>Please wait 
+        { loading ?<div className='flex-col '><RingLoader color=" #b7b7b7"  size={200} className='mx-auto'/> <div>Please wait 
         </div></div>: 
         <div className="font-bold">
            <div className='align-middle text-center mx-auto mt-10'>
@@ -89,7 +89,7 @@ export const Audio2 = (props) => {
             // other props here
             className=' mt-11 mb-'
           />  */}
-          <div className=" mx-auto flex-col flex-wrap w-[300px]   mt-8   mb-20   border-slate-600   rounded-[70px] border-[9px]">
+          <div className=" mx-auto flex-col flex-wrap w-[300px]   mt-8   mb-20   border-[#8c8c8c]  rounded-[70px] border-[9px]">
           AUDIO-{i+1}
           <div className="  mt-8">
           <button key={i} onClick={()=>(soundPlay(`${j}`))} class="btn  mb-8">

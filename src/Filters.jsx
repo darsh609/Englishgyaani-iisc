@@ -154,7 +154,7 @@ console.log(".........",numbers)
 
   return (
     <div className=''>
-        <div className=' text-center mb-32 ml-96 text-neutral-700  font-extrabold '>
+        <div className=' text-center mb-32 ml-96 text-[#000000] font-extrabold '>
         
         </div>
         <div className='mx-auto '>
@@ -162,7 +162,7 @@ console.log(".........",numbers)
 
 <div className='w-full'>
     <label  htmlFor="text" className="      font-bold"></label>
-<input type="text" className="filter text-sm md:text-2xl lg:text-3xl h-[2rem] md:h-[3.7rem] lg:h-[4.3rem] w-[20rem] md:w-[29rem] lg:w-[30rem] mx-auto rounded-3xl bg-slate-600  border-black lg:border-4 md:border-4 border-2" value={filter} onChange={handler} name="fill" id="fill" placeholder='Select Stimuli from dropdown'> 
+<input type="text" className="filter text-sm md:text-2xl lg:text-3xl h-[2rem] md:h-[3.7rem] lg:h-[4.3rem] w-[20rem] md:w-[29rem] lg:w-[30rem] mx-auto rounded-3xl bg-[#000000]  border-black lg:border-2 md:border-2 border-2" value={filter} onChange={handler} name="fill" id="fill" placeholder='Select Stimuli from dropdown'> 
 </input>
 
 </div>
@@ -184,7 +184,7 @@ console.log(".........",numbers)
                         const ans=item.words.toLowerCase()
                         return( searchTerm && ans.startsWith(searchTerm)&&ans!==searchTerm);
                     }
-                ).slice(0,10).map((item,i)=>(
+                ).slice(0,20).map((item,i)=>(
                         <div onClick={()=>onsearch(item.words,item.ids)} className='text-sm md:text-2xl lg:text-3xl text-white dropdown-row px-10'
                         key={i}>
                             {item.words}
@@ -233,12 +233,12 @@ console.log(".........",numbers)
 
 
             <div>
-            <table className="shadow-lg w-full h-[18rem]  text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-slate-600">
+            <table className="shadow-lg w-full h-[18rem]  text-base  md:text-2xl lg:text-3xl   font-bold border-collapse bg-[#b7b7b7]">
   <tr className=" border-b-4 border-black">
-    <th className="  bg-teal-100  border-black border-2   font-extrabold">GENDER</th>
-    <th className="   bg-teal-100  border-black border-2   font-extrabold">STIMULI COUNT</th>
+    <th className="   border-black border-2   font-extrabold">GENDER</th>
+    <th className="     border-black border-2   font-extrabold">STIMULI COUNT</th>
     {/* <th className="   bg-teal-100 border-black border-4 text-left px-16 py-4 font-extrabold">NO. OF AUDIOS</th> */}
-    <th className="  bg-teal-100 border-black border-2  font-extrabold">AUDIOS</th>
+    <th className="   border-black border-2  font-extrabold">AUDIOS</th>
   </tr>
   <tr
     className=""
