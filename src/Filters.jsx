@@ -183,7 +183,7 @@ console.log(".........",numbers)
                     data.filter((item)=>{
                       const searchTerm=filter.toLowerCase()
                         const ans=item.words.toLowerCase()
-                        return( searchTerm && ans.startsWith(searchTerm));
+                        return( searchTerm && ans.startsWith(searchTerm))&&ans!==searchTerm;
                     }
                 ).slice(0,20).map((item,i)=>(
                         <div onClick={()=>onsearch(item.words,item.ids)} className='text-sm md:text-2xl lg:text-3xl text-white dropdown-row px-10'
