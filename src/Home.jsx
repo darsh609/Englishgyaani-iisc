@@ -421,6 +421,7 @@ fun()
 
 {/* ṃap */}
 
+{/* //see hereeeeeee */}
 
            <div className='lg:w-[43rem] md:w-[34rem] w-[20rem]'>
         <SVGMap map={India} onLocationClick={onLocationClick} 
@@ -467,41 +468,8 @@ fun()
       <div className='flex flex-col justify-between'>
         <div className=' font-semibold border-4 border-b-black lg:text-[2rem] text-[1.4rem] mb-[1rem] '>Get By Mother Tounge:-</div>
       
-      {/* <div className='   mr-20'>
-          { motherarray?.map((e,i)=>(
-            <div key={i} className=" font-extrabold  ">
-              <div>
-                {
-                  e?<div className='flex-row '>
-                    <div className='mr-36 font-serif underline cursor-pointer'  onClick={()=>getaudiobylanguage(e)}>
-                      {e}
-                      </div>
-                    
-                    <button onClick={()=>getaudiobylanguage(e)}
-      className={`flex gap-3 mx-auto  rounded-3xl translate-x-72 -translate-y-12 mr-56 text-2xl border-4  border-slate-600 ${statet ? " bg-slate-600 " : " bg-slate-400 opacity-0" }  p-2`}>
-        <div className=' font-semibold'>
-        GET  AUDIO
-        </div>
-        
-        <div className=' mt-1'>
+      {}
 
-        <FaArrowRight />
-
-        </div>
-               </button>
-
-
-                  </div>:<div></div>
-                }
-                </div>
-            <br/>
-            
-
-
-              </div>
-              
-          ))}
-        </div> */}
 <select
               type="text"
               name="statet"

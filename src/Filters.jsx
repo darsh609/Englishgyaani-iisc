@@ -180,9 +180,10 @@ console.log(".........",numbers)
            
         <div className='dropdown mx-auto w-[19rem] md:w-[25rem] lg:w-[30rem] rounded-3xl  ' >
                 {
-                    data.filter((item)=>{const searchTerm=filter.toLowerCase()
+                    data.filter((item)=>{
+                      const searchTerm=filter.toLowerCase()
                         const ans=item.words.toLowerCase()
-                        return( searchTerm && ans.startsWith(searchTerm)&&ans!==searchTerm);
+                        return( searchTerm && ans.startsWith(searchTerm));
                     }
                 ).slice(0,20).map((item,i)=>(
                         <div onClick={()=>onsearch(item.words,item.ids)} className='text-sm md:text-2xl lg:text-3xl text-white dropdown-row px-10'
