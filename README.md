@@ -1,31 +1,84 @@
-# React & Tailwind CSS Starter Pack
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+# Audio Fetching Dashboard for English-Gyaani Project
+This repository contains the source code for the Audio Fetching Dashboard developed for the English-Gyaani Project at IISC Bangalore. The dashboard is built using React.js for the frontend and Firebase for backend services. It allows users to fetch audio files based on specific queries such as state, gender, and word, helping users improve their English language proficiency.
 
-## Usage
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+## Features
+Fetch audio based on user queries (state, gender, word)
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+Real-time audio resource retrieval using Firebase'
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
+Responsive and interactive UI with Material-UI components
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
+Geographical audio data visualization using React Vector Map
 
+Authentication and user management with Firebase Auth
+
+## Tech Stack
+Frontend: React.js, Redux, Material-UI
+
+Backend: Firebase (Realtime Database, Storage, Authentication)
+
+Other Tools: React Vector Map, Local Storage
+
+## Installation
+
+Follow the steps below to get the project running locally.
+
+Prerequisites
+Node.js (v14.x or higher)
+Firebase account (for backend services)
+1. Clone the Repository
+
+git clone https://github.com/your-username/audio-fetching-dashboard.git
+cd audio-fetching-dashboard
+
+
+2. Install Dependencies
+Run the following command to install the required packages:
+
+npm install
+
+3. Firebase Setup
+Create a project in Firebase Console.
+Enable Firebase Authentication, Realtime Database, and Storage.
+Generate Firebase config and add it to your React app in a .env file or directly in firebaseConfig.js:
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-app.firebaseapp.com",
+  databaseURL: "https://your-app.firebaseio.com",
+  projectId: "your-app-id",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id"
+};
+
+
+4. Start the Development Server
+npm start
+
+
+This will start the app on http://localhost:3000.
+
+Key Packages and Installation Commands
+React.js: npm install react
+Redux (State Management): npm install redux react-redux
+Firebase (Backend): npm install firebase
+Material-UI (UI Components): npm install @mui/material @emotion/react @emotion/styled
+React Vector Map (Map Integration): npm install react-jvectormap
+    
 ## Contributing
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+
+Feel free to fork this repository, make your changes, and submit a pull request. Contributions are welcome!
+## License
+
+This project is licensed under the MIT License.
+
+
+
+
+
+
+
