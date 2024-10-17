@@ -3,7 +3,7 @@
 
 # Audio Fetching Dashboard for English-Gyaani Project
 
-[Website Link](https://imprint2024.web.app/)
+[Website Link](https://englsihgyaani-audio-fetching.web.app/)
 
 This repository contains the source code for the Audio Fetching Dashboard developed for the English-Gyaani Project at IISC Bangalore. The dashboard is built using React.js for the frontend and Firebase for backend services. It allows users to fetch audio files based on specific queries such as state, gender, and word, helping users improve their English language proficiency.
 
